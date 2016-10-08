@@ -1,9 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp-Editor.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Audioroids/Scripts/Controllers/MissileController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/Controllers/ScenarioDeployer.cs">
     <Files>
-      <File FileName="Assets/_Audioroids/Scripts/Controllers/EnemyController.cs" Line="38" Column="57" />
-      <File FileName="Assets/_Audioroids/Scripts/Transformers/PositionTransformer.cs" Line="19" Column="1" />
-      <File FileName="Assets/_Audioroids/Scripts/Controllers/MissileController.cs" Line="19" Column="28" />
+      <File FileName="Assets/_Scripts/Infrastructure/AudioService.cs" Line="26" Column="31" />
+      <File FileName="Assets/_Scripts/Controllers/ScenarioDeployer.cs" Line="18" Column="78" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
