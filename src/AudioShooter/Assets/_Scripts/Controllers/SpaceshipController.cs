@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +10,7 @@ public class SpaceshipController : MonoBehaviour {
 
 	public static SpaceshipController Instance { get; private set; } 
 
-	public Object _missilePrefab;
+	public UnityEngine.Object _missilePrefab;
 	public float _velocityMultiplier;
 	public float _rotationMultiplier;
 	public float _fireInterval;
@@ -26,6 +27,7 @@ public class SpaceshipController : MonoBehaviour {
 		if (!IsDead)
 		{
 			ControlMovement();
+			KeepInsideCameraView();
 			ControlFire();
 		}
 	}
@@ -88,6 +90,13 @@ public class SpaceshipController : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(_fireInterval);
 		_canFire = true;
+	}
+
+    void KeepInsideCameraView()
+	{
+		Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+		pos.y = Mathf.Clamp01(pos.y);
+		transform.position = Camera.main.ViewportToWorldPoint(pos);
 	}
 
 	void OnTriggerEnter(Collider other)

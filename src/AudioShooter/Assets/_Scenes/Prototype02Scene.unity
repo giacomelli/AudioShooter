@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.33793116, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1079,10 +1079,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bd9e7a3b12b4dcfbc51a46f252e21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftMountainStart: {x: -10, y: 0, z: 0}
-  _rightMountainStart: {x: 10, y: 0, z: 0}
+  _leftMountainStart: {x: -12, y: 0, z: 0}
+  _rightMountainStart: {x: 12, y: 0, z: 0}
   _deployInterval: 1
-  _mountainScaleMultiplier: {x: 15, y: 15, z: 2}
+  _mountainScaleMultiplier: {x: 15, y: 13, z: 2}
   _leftMountainBand: 0
   _rightMountainBand: 0
 --- !u!1 &1406573934

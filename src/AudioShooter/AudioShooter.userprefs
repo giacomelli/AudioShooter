@@ -6,9 +6,9 @@
       <File FileName="Assets/_Scripts/Controllers/LevelController.cs" Line="7" Column="12" />
       <File FileName="Assets/_Scripts/Domain/Scores/Score.cs" Line="20" Column="18" />
       <File FileName="Assets/_Scripts/Controllers/ScoreController.cs" Line="15" Column="9" />
-      <File FileName="Assets/_Scripts/Controllers/CameraController.cs" Line="9" Column="90" />
+      <File FileName="Assets/_Scripts/Controllers/CameraController.cs" Line="11" Column="3" />
       <File FileName="Assets/_Scripts/Controllers/MountainDeployer.cs" Line="35" Column="46" />
-      <File FileName="Assets/_Scripts/Controllers/SpaceshipController.cs" Line="71" Column="5" />
+      <File FileName="Assets/_Scripts/Controllers/SpaceshipController.cs" Line="97" Column="86" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
