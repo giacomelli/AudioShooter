@@ -401,7 +401,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 594063236}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e801a56724d2e419787f67640e85cafa, type: 3}
   m_Name: 
@@ -849,7 +849,7 @@ GameObject:
   - 4: {fileID: 1378035858}
   - 114: {fileID: 1378035859}
   m_Layer: 0
-  m_Name: ScenarioDeployer
+  m_Name: MountainDeployer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,14 +879,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bd9e7a3b12b4dcfbc51a46f252e21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftWallStart: {x: -10, y: 0, z: 0}
-  _rightWallStart: {x: 10, y: 0, z: 0}
-  _wallPrefab: {fileID: 1000010236513218, guid: c6707e6739f8e402f96a9f6b1708b370,
-    type: 2}
+  _leftMountainStart: {x: -10, y: 0, z: 0}
+  _rightMountainStart: {x: 10, y: 0, z: 0}
   _deployInterval: 1
-  _wallScaleMultiplier: {x: 15, y: 15, z: 2}
-  _leftWallBand: 0
-  _rightWallBand: 0
+  _mountainScaleMultiplier: {x: 15, y: 15, z: 2}
+  _leftMountainBand: 0
+  _rightMountainBand: 2
 --- !u!1 &1406573934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881023b0ad2b640b0a658163d02fc594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocity: 0.007
+  _velocity: 0.006
 --- !u!1 &1474874772
 GameObject:
   m_ObjectHideFlags: 0

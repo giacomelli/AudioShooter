@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000010211498994}
   - 114: {fileID: 114000011970034112}
   m_Layer: 0
-  m_Name: WallPrefab
+  m_Name: MountainPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

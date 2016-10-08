@@ -45,12 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\Application\MountainAppService.cs" />
      <Compile Include="Assets\_Scripts\Controllers\CameraController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyDeployer.cs" />
      <Compile Include="Assets\_Scripts\Controllers\LightController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\MissileController.cs" />
-     <Compile Include="Assets\_Scripts\Controllers\ScenarioDeployer.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\MountainDeployer.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\MountainEnemyDeployer.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SoundMonoBehaviour.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SpaceshipController.cs" />
      <Compile Include="Assets\_Scripts\Infrastructure\AudioService.cs" />
