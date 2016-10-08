@@ -5,14 +5,17 @@ public class SpaceshipController : MonoBehaviour {
 
 	Vector2 _direction;
 	bool _canFire = true;
+
+	public static SpaceshipController Instance { get; private set; } 
+
 	public Object _missilePrefab;
 	public float _velocityMultiplier;
 	public float _rotationMultiplier;
 	public float _fireInterval;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+		Instance = this;
 	}
 	
 	// Update is called once per frame
@@ -59,9 +62,26 @@ public class SpaceshipController : MonoBehaviour {
 
 	void ControlFire()
 	{
-		if (_canFire && Input.GetKey(KeyCode.X))
+		if (_canFire)
 		{
-			Instantiate(_missilePrefab, transform.position, transform.rotation);
+			// Left fire.
+			if (Input.GetKey(KeyCode.Z))
+			{
+				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.left);
+			}
+
+			// Front fire.
+			if (Input.GetKey(KeyCode.X))
+			{
+				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.forward);
+			}
+
+			// Right fire.
+			if (Input.GetKey(KeyCode.C))
+			{
+				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.right);
+			}
+
 			_canFire = false;
 			StartCoroutine(ReleaseFire());
 		}
