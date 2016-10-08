@@ -23,29 +23,38 @@ public class SpaceshipController : MonoBehaviour {
 
 	void ControlMovement()
 	{
-		//var direction = Vector3.zero;
-		var rotation = Vector3.zero;
+		var direction = Vector3.zero;
+		//var rotation = Vector3.zero;
 
-		//if (Input.GetKey(KeyCode.UpArrow))
-		//{
-		//	direction += transform.right * _velocityMultiplier;
-		//}
-		//else if (Input.GetKey(KeyCode.DownArrow))
-		//{
-		//	direction -= transform.right * _velocityMultiplier;
-		//}
+		if (Input.GetKey(KeyCode.UpArrow))
+		{
+			direction += transform.right * _velocityMultiplier;
+		}
+		else if (Input.GetKey(KeyCode.DownArrow))
+		{
+			direction -= transform.right * _velocityMultiplier;
+		}
 
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
-			rotation.y += _rotationMultiplier;
+			direction -= transform.forward * _velocityMultiplier;
 		}
 		else if (Input.GetKey(KeyCode.LeftArrow))
 		{
-			rotation.y -= _rotationMultiplier;
+			direction += transform.forward * _velocityMultiplier;
 		}
 
-		//transform.position += direction;
-		transform.Rotate(rotation);
+		//if (Input.GetKey(KeyCode.RightArrow))
+		//{
+		//	rotation.y += _rotationMultiplier;
+		//}
+		//else if (Input.GetKey(KeyCode.LeftArrow))
+		//{
+		//	rotation.y -= _rotationMultiplier;
+		//}
+
+		transform.position += direction;
+		//transform.Rotate(rotation);
 	}
 
 	void ControlFire()
