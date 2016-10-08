@@ -7,9 +7,12 @@ public class MissileController : MonoBehaviour {
 	public float _velocity;
 	public float _distance;
 
+	public Vector3 Direction { get; set; }
+	public GameObject Shooter { get; set; }
+
 	void Start()
 	{
-		_target = transform.right * _distance;
+		_target = transform.position + (Direction * _distance);
 	}
 	
 	// Update is called once per frame
@@ -24,7 +27,7 @@ public class MissileController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Enemy")
+		if ((other.IsEnemy() && other.gameObject != Shooter) || other.IsMountain())
 		{
 			Destroy(gameObject);
 		}
