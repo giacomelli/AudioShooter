@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dieDelay: 2
   _dieExplosionForce: 200
-  _minAudioBandToFire: 0.9
+  _minAudioBandToFire: 0.82
   _fireInterval: 1
   _missileVelocity: 0.002
 --- !u!114 &114000013699214374
