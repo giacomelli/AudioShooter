@@ -32,7 +32,7 @@ public class MountainEnemyController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.IsMissile() && !other.IsMyMissile(this))
+		if (other.IsMissile() && !other.IsEnemyMissile())
 		{
 			StartCoroutine(Die());
 		}

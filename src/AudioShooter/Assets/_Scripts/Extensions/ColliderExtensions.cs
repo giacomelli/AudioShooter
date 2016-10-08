@@ -22,11 +22,31 @@ public static class ColliderExtensions {
 	{
 		if (otherCollider.IsMissile())
 		{
-			var missileController = otherCollider.GetComponent<MissileController>();
-
-			return missileController.Shooter == me.gameObject;
+			return GetShooter(otherCollider) == me.gameObject;
 		}
 
 		return false;
+	}
+
+	public static bool IsEnemyMissile(this Collider otherCollider)
+	{
+		if (otherCollider.IsMissile())
+		{
+			return GetShooter(otherCollider).tag == "Enemy";
+		}
+
+		return false;
+	}
+
+	public static GameObject GetShooter(this Collider otherCollider)
+	{
+		if (otherCollider.IsMissile())
+		{
+			var missileController = otherCollider.GetComponent<MissileController>();
+
+			return missileController.Shooter;
+		}
+
+		return null;
 	}
 }
