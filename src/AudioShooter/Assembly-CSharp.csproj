@@ -58,8 +58,10 @@
      <Compile Include="Assets\_Scripts\Controllers\MountainDeployer.cs" />
      <Compile Include="Assets\_Scripts\Controllers\MountainEnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\MountainEnemyDeployer.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\ScoreController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SoundMonoBehaviour.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SpaceshipController.cs" />
+     <Compile Include="Assets\_Scripts\Domain\Scores\Score.cs" />
      <Compile Include="Assets\_Scripts\Extensions\ColliderExtensions.cs" />
      <Compile Include="Assets\_Scripts\Infrastructure\AudioService.cs" />
      <Compile Include="Assets\_Scripts\Transformers\ColorTransformer.cs" />

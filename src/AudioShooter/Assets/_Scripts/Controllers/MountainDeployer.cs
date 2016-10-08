@@ -32,6 +32,7 @@ public class MountainDeployer : MonoBehaviour
 			DeployMountain(_leftMountainStart, _leftMountainBand);
 			DeployMountain(_rightMountainStart, _rightMountainBand);
 
+			Score.Instance.RegisterMountainDeployed();
 			yield return new WaitForSeconds(_deployInterval);
 		}
 	}

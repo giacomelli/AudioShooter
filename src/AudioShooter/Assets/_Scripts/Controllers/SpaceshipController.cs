@@ -6,7 +6,6 @@ public class SpaceshipController : MonoBehaviour {
 
 	Vector2 _direction;
 	bool _canFire = true;
-	bool _isDead;
 
 	public static SpaceshipController Instance { get; private set; } 
 
@@ -15,6 +14,8 @@ public class SpaceshipController : MonoBehaviour {
 	public float _rotationMultiplier;
 	public float _fireInterval;
 
+	public bool IsDead { get; private set; }
+
 	// Use this for initialization
 	void Awake () {
 		Instance = this;
@@ -22,7 +23,7 @@ public class SpaceshipController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (!_isDead)
+		if (!IsDead)
 		{
 			ControlMovement();
 			ControlFire();
@@ -58,22 +59,24 @@ public class SpaceshipController : MonoBehaviour {
 	{
 		if (_canFire)
 		{
-			// Left fire.
-			if (Input.GetKey(KeyCode.Z))
-			{
-				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.left);
-			}
-
 			// Front fire.
-			else if (Input.GetKey(KeyCode.X))
+			if (Input.GetKey(KeyCode.X))
 			{
 				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.forward);
 			}
-
-			// Right fire.
-			else if (Input.GetKey(KeyCode.C))
+			else
 			{
-				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.right);
+				// Left fire.
+				if (Input.GetKey(KeyCode.Z))
+				{
+					MissileAppService.CreateMissile(gameObject, transform.position, Vector3.left);
+				}
+
+				// Right fire.
+				if (Input.GetKey(KeyCode.C))
+				{
+					MissileAppService.CreateMissile(gameObject, transform.position, Vector3.right);
+				}
 			}
 
 			_canFire = false;
@@ -91,7 +94,7 @@ public class SpaceshipController : MonoBehaviour {
 	{
 		if (other.IsEnemyMissile() || other.IsMountain() || other.IsEnemy())
 		{
-			_isDead = true;
+			IsDead = true;
 			HudController.Instance.ChangeCentralMessage("Game Over");
 			GetComponent<MeshRenderer>().enabled = false;
 		}
