@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Missile
   - Enemy
+  - Mountain
   layers:
   - Default
   - TransparentFX
