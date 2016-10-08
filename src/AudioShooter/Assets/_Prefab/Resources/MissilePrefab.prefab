@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minScale: {x: 0.1, y: 0.1, z: 0.1}
-  _maxScale: {x: 0.9, y: 0.9, z: 0.9}
+  _maxScale: {x: 0.4, y: 0.4, z: 0.4}
 --- !u!114 &114000011708074552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b786391e841454781e650a9be3244e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocity: 0.04
+  _velocity: 0.02
   _distance: 50
 --- !u!114 &114000013028691330
 MonoBehaviour:

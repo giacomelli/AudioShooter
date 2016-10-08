@@ -149,7 +149,8 @@ MonoBehaviour:
   _dieDelay: 2
   _dieExplosionForce: 200
   _fireChance: 0.43
-  _fireInterval: 1
+  _fireInterval: 10
+  _missileVelocity: 0.002
 --- !u!114 &114000013699214374
 MonoBehaviour:
   m_ObjectHideFlags: 1

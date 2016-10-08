@@ -2,32 +2,40 @@
 using System.Collections;
 using System;
 
+[RequireComponent(typeof(SoundConfig))]
 public class MountainEnemyController : MonoBehaviour {
 	bool _isDead;
+	int _band;
+	bool _canFire = true;
+
 	public float _dieDelay;
 	public float _dieExplosionForce;
 
 	[Range(0f, 1f)]
-	public float _fireChance;
+	public float _minAudioBandToFire;
 
 	public float _fireInterval;
+	public float _missileVelocity;
 
 	void Start()
 	{
-		StartCoroutine(Fire());
+		_band = GetComponent<SoundConfig>()._band;
 	}
 
-	IEnumerator Fire()
+	void Update()
 	{
-		while (true)
+		if (_canFire && AudioService.AudioBandBuffer[_band] >= _minAudioBandToFire)
 		{
-			yield return new WaitForSeconds(_fireInterval);
-
-			if (UnityEngine.Random.Range(0f, 1f) <= _fireChance)
-			{
-				MissileAppService.CreateMissile(gameObject, transform.position, transform.position.x < 0 ? Vector3.right : Vector3.left);
-			}
+			_canFire = false;
+			MissileAppService.CreateMissile(gameObject, transform.position, transform.position.x < 0 ? Vector3.right : Vector3.left, _missileVelocity);
+			StartCoroutine(ReleaseFire());
 		}
+	}
+
+	IEnumerator ReleaseFire()
+	{
+		yield return new WaitForSeconds(_fireInterval);
+		_canFire = true;
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -53,6 +61,3 @@ public class MountainEnemyController : MonoBehaviour {
 		}
 	}
 }
-
-
-
