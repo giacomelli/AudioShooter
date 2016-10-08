@@ -401,7 +401,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 594063236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e801a56724d2e419787f67640e85cafa, type: 3}
   m_Name: 
@@ -424,7 +424,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2088964921}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &598546202
 Prefab:
   m_ObjectHideFlags: 0
@@ -438,7 +438,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010271191992, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000010271191992, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
       propertyPath: m_LocalPosition.z
@@ -884,7 +884,7 @@ MonoBehaviour:
   _deployInterval: 1
   _mountainScaleMultiplier: {x: 15, y: 15, z: 2}
   _leftMountainBand: 0
-  _rightMountainBand: 2
+  _rightMountainBand: 0
 --- !u!1 &1406573934
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +901,7 @@ GameObject:
   - 114: {fileID: 1406573940}
   - 114: {fileID: 1406573942}
   - 114: {fileID: 1406573943}
+  - 114: {fileID: 1406573944}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1028,6 +1029,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocity: 0.006
+--- !u!114 &1406573944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406573934}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualizeFocus: 0
+  focalLength: 10
+  focalSize: 0.05
+  aperture: 0.5
+  focalTransform: {fileID: 0}
+  maxBlurSize: 2
+  highResolution: 0
+  blurType: 0
+  blurSampleCount: 2
+  nearBlur: 0
+  foregroundOverlap: 1
+  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
+  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
+  dx11BokehThreshold: 0.5
+  dx11SpawnHeuristic: 0.0875
+  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
+  dx11BokehScale: 1.2
+  dx11BokehIntensity: 2.5
 --- !u!1 &1474874772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1090,51 @@ Transform:
   - {fileID: 2021364657}
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &1518400048
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1518400049}
+  - 114: {fileID: 1518400050}
+  m_Layer: 0
+  m_Name: MountainEnemyDeployer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1518400049
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518400048}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2088964921}
+  m_RootOrder: 1
+--- !u!114 &1518400050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518400048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a69a57fa0f97c48adb0911a3257cf7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinWaveSize: 0
+  MaxWaveSize: 2
+  WaveInterval: 1
+  EnemyPrefab: {fileID: 1000013189672900, guid: 80a647e0606d947e8ba6efdb5b0ce9ae,
+    type: 2}
 --- !u!1 &1644726771
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1439,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1378035858}
+  - {fileID: 1518400049}
   - {fileID: 594063238}
   m_Father: {fileID: 0}
   m_RootOrder: 9
