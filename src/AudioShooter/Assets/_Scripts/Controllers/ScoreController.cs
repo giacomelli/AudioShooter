@@ -12,9 +12,9 @@ public class ScoreController : MonoBehaviour
 
 		score.PointsUpdated += (sender, e) =>
 		{
-			if (!SpaceshipController.Instance.IsDead)
+			if (!Spaceship.Instance.IsDead)
 			{
-				_scoreText.text = score.Points.ToString();
+				_scoreText.text = score.Points + " points";
 			}
 		};
 	}

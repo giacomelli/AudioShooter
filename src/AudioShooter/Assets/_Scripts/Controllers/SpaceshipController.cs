@@ -14,17 +14,24 @@ public class SpaceshipController : MonoBehaviour {
 	public float _velocityMultiplier;
 	public float _rotationMultiplier;
 	public float _fireInterval;
+	public int _lifes;
 
-	public bool IsDead { get; private set; }
+	public Spaceship Model { get; private set;}
 
 	// Use this for initialization
 	void Awake () {
+		Model = new Spaceship(_lifes);
+		Model.Dead += (sender, e) =>
+		{
+			GetComponent<MeshRenderer>().enabled = false;
+		};
+
 		Instance = this;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (!IsDead)
+		if (!Model.IsDead)
 		{
 			ControlMovement();
 			KeepInsideCameraView();
@@ -103,9 +110,7 @@ public class SpaceshipController : MonoBehaviour {
 	{
 		if (other.IsEnemyMissile() || other.IsMountain() || other.IsEnemy())
 		{
-			IsDead = true;
-			HudController.Instance.ChangeCentralMessage("Game Over");
-			GetComponent<MeshRenderer>().enabled = false;
+			Model.Hit();
 		}
 	}
 }

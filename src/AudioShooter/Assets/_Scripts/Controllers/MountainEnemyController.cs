@@ -50,7 +50,7 @@ public class MountainEnemyController : MonoBehaviour {
 	{
 		if (!_isDead)
 		{
-			Score.Instance.RegisterEnemyKilled(gameObject);
+			Score.Instance.RegisterEnemyKilled();
 			_isDead = true;
 			gameObject.GetComponent<Collider>().enabled = false;
 			var rb = gameObject.AddComponent<Rigidbody>();

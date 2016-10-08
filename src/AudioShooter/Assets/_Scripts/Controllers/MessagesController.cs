@@ -2,11 +2,11 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class HudController : MonoBehaviour {
+public class MessagesController : MonoBehaviour {
 
 	public Text _centralMessage;
 
-	public static HudController Instance { get; private set; }
+	public static MessagesController Instance { get; private set; }
 
 	void Awake()
 	{

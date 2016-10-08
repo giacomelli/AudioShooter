@@ -15,7 +15,7 @@ public class Score
 
 	public int Points { get; private set; } 
 
-	public void RegisterEnemyKilled(GameObject enemy)
+	public void RegisterEnemyKilled()
 	{
 		Points += 1000;
 		PointsUpdated(this, EventArgs.Empty);

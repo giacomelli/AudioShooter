@@ -51,9 +51,10 @@
      <Compile Include="Assets\_Scripts\Controllers\CameraController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyDeployer.cs" />
-     <Compile Include="Assets\_Scripts\Controllers\HudController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\LevelController.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\LifeController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\LightController.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\MessagesController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\MissileController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\MountainDeployer.cs" />
      <Compile Include="Assets\_Scripts\Controllers\MountainEnemyController.cs" />
@@ -61,7 +62,8 @@
      <Compile Include="Assets\_Scripts\Controllers\ScoreController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SoundMonoBehaviour.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SpaceshipController.cs" />
-     <Compile Include="Assets\_Scripts\Domain\Scores\Score.cs" />
+     <Compile Include="Assets\_Scripts\Domain\Score.cs" />
+     <Compile Include="Assets\_Scripts\Domain\Spaceship.cs" />
      <Compile Include="Assets\_Scripts\Extensions\ColliderExtensions.cs" />
      <Compile Include="Assets\_Scripts\Infrastructure\AudioService.cs" />
      <Compile Include="Assets\_Scripts\Transformers\ColorTransformer.cs" />
