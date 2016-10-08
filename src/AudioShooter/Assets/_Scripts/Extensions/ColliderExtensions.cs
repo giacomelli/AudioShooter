@@ -32,7 +32,10 @@ public static class ColliderExtensions {
 	{
 		if (otherCollider.IsMissile())
 		{
-			return GetShooter(otherCollider).tag == "Enemy";
+			var shooter = GetShooter(otherCollider);
+				
+			// If shooter is null then is an enemy (enemy was already killed).
+			return shooter == null || shooter.tag == "Enemy";
 		}
 
 		return false;

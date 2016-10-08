@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpaceshipController : MonoBehaviour {
 
 	Vector2 _direction;
 	bool _canFire = true;
+	bool _isDead;
 
 	public static SpaceshipController Instance { get; private set; } 
 
@@ -20,15 +22,17 @@ public class SpaceshipController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		ControlMovement();
-		ControlFire();
+		if (!_isDead)
+		{
+			ControlMovement();
+			ControlFire();
+		}
 	}
 
 	void ControlMovement()
 	{
 		var direction = Vector3.zero;
-		//var rotation = Vector3.zero;
-
+	
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
 			direction += transform.right * _velocityMultiplier;
@@ -47,17 +51,7 @@ public class SpaceshipController : MonoBehaviour {
 			direction += transform.forward * _velocityMultiplier;
 		}
 
-		//if (Input.GetKey(KeyCode.RightArrow))
-		//{
-		//	rotation.y += _rotationMultiplier;
-		//}
-		//else if (Input.GetKey(KeyCode.LeftArrow))
-		//{
-		//	rotation.y -= _rotationMultiplier;
-		//}
-
 		transform.position += direction;
-		//transform.Rotate(rotation);
 	}
 
 	void ControlFire()
@@ -71,13 +65,13 @@ public class SpaceshipController : MonoBehaviour {
 			}
 
 			// Front fire.
-			if (Input.GetKey(KeyCode.X))
+			else if (Input.GetKey(KeyCode.X))
 			{
 				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.forward);
 			}
 
 			// Right fire.
-			if (Input.GetKey(KeyCode.C))
+			else if (Input.GetKey(KeyCode.C))
 			{
 				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.right);
 			}
@@ -92,7 +86,14 @@ public class SpaceshipController : MonoBehaviour {
 		yield return new WaitForSeconds(_fireInterval);
 		_canFire = true;
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.IsEnemyMissile() || other.IsMountain() || other.IsEnemy())
+		{
+			_isDead = true;
+			HudController.Instance.ChangeCentralMessage("Game Over");
+			GetComponent<MeshRenderer>().enabled = false;
+		}
+	}
 }
-
-
-
