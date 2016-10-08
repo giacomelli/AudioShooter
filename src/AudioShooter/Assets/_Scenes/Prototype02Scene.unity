@@ -1030,7 +1030,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _velocity: 0.007
-  _follow: {fileID: 0}
 --- !u!1 &1474874772
 GameObject:
   m_ObjectHideFlags: 0
