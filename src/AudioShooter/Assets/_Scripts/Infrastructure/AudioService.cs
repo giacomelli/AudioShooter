@@ -13,18 +13,11 @@ public class AudioService : MonoBehaviour
 	float[] _freqBandHighest = new float[8];
 	public static float[] _audioBand = new float[8];
 	public static float[] AudioBandBuffer = new float[8];
-	public static float[] Samples;
-	public static float AudioSeconds { get; private set; }
 
 	// Use this for initialization
 	void Awake()
 	{
 		_audioSource = GetComponent<AudioSource>();
-
-		var clip = _audioSource.clip;
-		Samples = new float[111];
-		clip.GetData(Samples, 111111);
-		AudioSeconds = clip.length;
 	}
 
 	// Update is called once per frame
