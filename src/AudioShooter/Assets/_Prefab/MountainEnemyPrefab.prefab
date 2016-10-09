@@ -151,6 +151,7 @@ MonoBehaviour:
   _minAudioBandToFire: 0.82
   _fireInterval: 1
   _missileVelocity: 0.002
+  _targetSpaceship: 0
 --- !u!114 &114000013699214374
 MonoBehaviour:
   m_ObjectHideFlags: 1
