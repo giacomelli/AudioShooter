@@ -3,13 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-public class MountainEnemyDeployer : MonoBehaviour {
-	public int MinWaveSize;
-	public int MaxWaveSize;
+[RequireComponent(typeof(SoundConfig))]
+public class MountainEnemyDeployer : SoundMonoBehaviour {
 	public float WaveInterval;
 	public UnityEngine.Object EnemyPrefab;
 	List<GameObject> _wave;
-	int _waveNumber = 0;
 
 	void Start()
 	{
@@ -28,9 +26,7 @@ public class MountainEnemyDeployer : MonoBehaviour {
 
 	void CreateWave()
 	{
-		var waveSize = UnityEngine.Random.Range(MinWaveSize, MaxWaveSize + 1);
-		var waveBand = SoundConfig.RandomBand();
-		var newestMountains = MountainAppService.GetNewestMountains(waveSize);
+		var newestMountains = MountainAppService.GetNewestMountains(2);
 
 		for (int i = 0; i < newestMountains.Length; i++)
 		{
@@ -60,11 +56,9 @@ public class MountainEnemyDeployer : MonoBehaviour {
 			
 			enemy.transform.parent = mountain.transform;
 			enemy.name = mountain.name + "Enemy" + i;
-			enemy.GetComponent<SoundConfig>()._band = waveBand; 
+			enemy.GetComponent<SoundConfig>()._band = Config._band; 
 		
 			_wave.Add(enemy);
 		}
-
-		_waveNumber++;
 	}
 }

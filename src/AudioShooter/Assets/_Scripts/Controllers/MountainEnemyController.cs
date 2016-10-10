@@ -6,6 +6,7 @@ using System;
 public class MountainEnemyController : MonoBehaviour {
 	bool _isDead;
 	int _band;
+	Bounds _bounds;
 	bool _canFire = true;
 
 	public float _dieDelay;
@@ -16,11 +17,11 @@ public class MountainEnemyController : MonoBehaviour {
 
 	public float _fireInterval;
 	public float _missileVelocity;
-	public bool _targetSpaceship;
 
 	void Start()
 	{
 		_band = GetComponent<SoundConfig>()._band;
+		_bounds = GetComponent<MeshFilter>().mesh.bounds;
 	}
 
 	void Update()
@@ -28,18 +29,11 @@ public class MountainEnemyController : MonoBehaviour {
 		if (_canFire && AudioService.AudioBandBuffer[_band] >= _minAudioBandToFire)
 		{
 			_canFire = false;
-			Vector3 direction;
+			var isFromLeftMountain = transform.position.x < 0;
+			var direction = isFromLeftMountain ? Vector3.right : Vector3.left;
+			var missilePosition = isFromLeftMountain ? transform.position + _bounds.center : transform.position - _bounds.center;
 
-			if (_targetSpaceship)
-			{
-				direction = transform.position.x < 0 ? new Vector3(1, 0, -1f) : new Vector3(-1, 0, -1f);
-			}
-			else
-			{
-				direction = transform.position.x < 0 ? Vector3.right : Vector3.left;
-			}
-
-			MissileAppService.CreateMissile(gameObject, transform.position, direction, _missileVelocity);
+			MissileAppService.CreateMissile(gameObject, missilePosition, direction, _missileVelocity);
 			StartCoroutine(ReleaseFire());
 		}
 	}
