@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{E8587CCD-730D-A1D9-83F2-1560322F06F8}|Unit Tests">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/Controllers/MountainEnemyController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Scripts/Controllers/MissileController.cs">
     <Files>
-      <File FileName="Assets/_Scripts/Controllers/MountainEnemyController.cs" Line="42" Column="32" />
-      <File FileName="Assets/_Scripts/Controllers/GroundEnemyController.cs" Line="6" Column="35" />
-      <File FileName="Assets/_Scripts/Controllers/GroundEnemyDeployer.cs" Line="6" Column="1" />
-      <File FileName="Assets/_Scripts/Controllers/MountainEnemyDeployer.cs" Line="63" Column="1" />
+      <File FileName="Assets/_Scripts/Controllers/MountainEnemyController.cs" Line="34" Column="120" />
+      <File FileName="Assets/_Scripts/Controllers/GroundEnemyController.cs" Line="42" Column="31" />
+      <File FileName="Assets/_Scripts/Controllers/GroundEnemyDeployer.cs" Line="41" Column="6" />
+      <File FileName="Assets/_Scripts/Controllers/MountainEnemyDeployer.cs" Line="53" Column="77" />
       <File FileName="Assets/_Scripts/Controllers/MountainDeployer.cs" Line="37" Column="4" />
+      <File FileName="Assets/_Scripts/Application/MissileAppService.cs" Line="13" Column="45" />
+      <File FileName="Assets/_Scripts/Controllers/MissileController.cs" Line="4" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

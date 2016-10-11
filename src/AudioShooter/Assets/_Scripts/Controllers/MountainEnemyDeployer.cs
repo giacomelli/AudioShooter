@@ -7,11 +7,10 @@ using System;
 public class MountainEnemyDeployer : SoundMonoBehaviour {
 	public float WaveInterval;
 	public UnityEngine.Object EnemyPrefab;
-	List<GameObject> _wave;
+	public float DeployYFromSpaceship;
 
 	void Start()
 	{
-		_wave = new List<GameObject>();
 		StartCoroutine(Deploy());
 	}
 
@@ -51,14 +50,12 @@ public class MountainEnemyDeployer : SoundMonoBehaviour {
 
 			enemy.transform.position = new Vector3(
 				mountain.transform.position.x + (mountainBoundX * mountain.transform.localScale.x) + (enemyBoundX * enemy.transform.localScale.x), 
-				SpaceshipController.Instance.transform.position.y, 
+				SpaceshipController.Instance.transform.position.y + DeployYFromSpaceship, 
 				mountain.transform.position.z);
 			
 			enemy.transform.parent = mountain.transform;
 			enemy.name = mountain.name + "Enemy" + i;
 			enemy.GetComponent<SoundConfig>()._band = Config._band; 
-		
-			_wave.Add(enemy);
 		}
 	}
 }
