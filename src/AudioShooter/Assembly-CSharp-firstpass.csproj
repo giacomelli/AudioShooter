@@ -111,6 +111,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\Skahal-Unity-Scripts\src\Skahal.Unity.Scripts.Externals\Detonator Explosion Framework\Resources\Detonator\Textures\HeatDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
@@ -121,7 +122,9 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Skahal-Unity-Scripts\src\Skahal.Unity.Scripts.Externals\Detonator Explosion Framework\readme.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Skahal-Unity-Scripts\src\Editor\UnitTests\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.xml" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
@@ -129,6 +132,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\Skahal-Unity-Scripts\src\Skahal.Unity.Scripts.Externals\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
