@@ -45,7 +45,6 @@ public class MountainDeployer : MonoBehaviour
 
 		var buffer = AudioService.AudioBandBuffer[wallBand];
 		mountain.transform.localScale = new Vector3(buffer * _mountainScaleMultiplier.x, buffer * _mountainScaleMultiplier.y, buffer * _mountainScaleMultiplier.z);
-		mountain.transform.parent = transform;
 	}
 }
 

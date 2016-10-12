@@ -8,7 +8,7 @@ public static class MissileAppService
 {
 	public static GameObject CreateMissile(GameObject shooter, Vector3 position, Vector3 direction, float velocity)
 	{
-		var go = (GameObject) SHPoolsManager.GetGameObject("Missile");
+		var go = SHPoolsManager.GetGameObject("Missile");
 		go.transform.position = position;
 		var controller = go.GetComponent<MissileController>();
 		controller.Initialize(shooter, direction);
