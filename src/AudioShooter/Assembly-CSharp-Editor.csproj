@@ -184,6 +184,9 @@
  <Reference Include="UnityEditor.TreeEditor">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
+ <Reference Include="Rhino.Mocks">
+ <HintPath>/Users/giacomelli/Dropbox/libs/AudioShooter/src/AudioShooter/Assets/Skahal-Unity-Scripts/src/Editor/UnitTests/packages/RhinoMocks.3.6.1/lib/net/Rhino.Mocks.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -198,9 +201,6 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="Rhino.Mocks">
- <HintPath>/Users/giacomelli/Dropbox/libs/AudioShooter/src/AudioShooter/Assets/Skahal-Unity-Scripts/src/Editor/UnitTests/packages/RhinoMocks.3.6.1/lib/net/Rhino.Mocks.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

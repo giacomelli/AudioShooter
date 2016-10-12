@@ -10,11 +10,11 @@ public class SpaceshipController : MonoBehaviour {
 
 	public static SpaceshipController Instance { get; private set; } 
 
-	public UnityEngine.Object _missilePrefab;
 	public float _velocityMultiplier;
 	public float _rotationMultiplier;
 	public float _fireInterval;
 	public int _lifes;
+	public float _missileVelocity;
 
 	public Spaceship Model { get; private set;}
 
@@ -71,20 +71,20 @@ public class SpaceshipController : MonoBehaviour {
 			// Front fire.
 			if (Input.GetKey(KeyCode.X))
 			{
-				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.forward);
+				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.forward, _missileVelocity);
 			}
 			else
 			{
 				// Left fire.
 				if (Input.GetKey(KeyCode.Z))
 				{
-					MissileAppService.CreateMissile(gameObject, transform.position, Vector3.left);
+					MissileAppService.CreateMissile(gameObject, transform.position, Vector3.left, _missileVelocity);
 				}
 
 				// Right fire.
 				if (Input.GetKey(KeyCode.C))
 				{
-					MissileAppService.CreateMissile(gameObject, transform.position, Vector3.right);
+					MissileAppService.CreateMissile(gameObject, transform.position, Vector3.right, _missileVelocity);
 				}
 			}
 
