@@ -65,7 +65,7 @@ public class MountainEnemyController : MonoBehaviour {
 
 			yield return new WaitForSeconds(_dieDelay);
 
-			Destroy(gameObject);
+			EnemyAppService.DestroyMountainEnemy(gameObject);
 		}
 	}
 }

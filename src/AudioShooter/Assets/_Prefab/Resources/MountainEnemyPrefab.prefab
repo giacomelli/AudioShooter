@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a1c828c2c444335ba9dcdc733896d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minScale: {x: 0.1, y: 0.1, z: 0.5}
-  _maxScale: {x: 0.4, y: 0.1, z: 0.5}
+  _minScale: {x: 1, y: 1, z: 0.5}
+  _maxScale: {x: 4, y: 1, z: 0.5}
 --- !u!114 &114000010943766110
 MonoBehaviour:
   m_ObjectHideFlags: 1

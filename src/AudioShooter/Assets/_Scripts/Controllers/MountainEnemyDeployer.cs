@@ -6,7 +6,6 @@ using System;
 [RequireComponent(typeof(SoundConfig))]
 public class MountainEnemyDeployer : SoundMonoBehaviour {
 	public float WaveInterval;
-	public UnityEngine.Object EnemyPrefab;
 	public float DeployYFromSpaceship;
 
 	void Start()
@@ -31,7 +30,7 @@ public class MountainEnemyDeployer : SoundMonoBehaviour {
 		{
 			var mountain = newestMountains[i];
 			var mountainBounds = mountain.GetComponent<MeshFilter>().mesh.bounds;
-			var enemy = (GameObject)Instantiate(EnemyPrefab);
+			var enemy = EnemyAppService.CreateMountainEnemy();
 			var enemyBounds = enemy.GetComponent<MeshFilter>().mesh.bounds;
 
 			float mountainBoundX;
@@ -53,8 +52,7 @@ public class MountainEnemyDeployer : SoundMonoBehaviour {
 				SpaceshipController.Instance.transform.position.y + DeployYFromSpaceship, 
 				mountain.transform.position.z);
 			
-			enemy.transform.parent = mountain.transform;
-			enemy.name = mountain.name + "Enemy" + i;
+			//enemy.transform.parent = mountain.transform;
 			enemy.GetComponent<SoundConfig>()._band = Config._band; 
 		}
 	}
