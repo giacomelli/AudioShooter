@@ -122,6 +122,7 @@
      <Compile Include="Assets\Skahal-Unity-Scripts\src\ParticleSystems\ParticleEmitterExtensions.cs" />
      <Compile Include="Assets\Skahal-Unity-Scripts\src\ParticleSystems\TrainRendererExtensions.cs" />
      <Compile Include="Assets\Skahal-Unity-Scripts\src\PerlinScript.cs" />
+     <Compile Include="Assets\Skahal-Unity-Scripts\src\Physics\RigidbodyExtensions.cs" />
      <Compile Include="Assets\Skahal-Unity-Scripts\src\Pool\SHGameObjectInPool.cs" />
      <Compile Include="Assets\Skahal-Unity-Scripts\src\Pool\SHPoolBase.cs" />
      <Compile Include="Assets\Skahal-Unity-Scripts\src\Pool\SHPoolsManager.cs" />

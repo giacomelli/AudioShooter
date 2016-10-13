@@ -15,4 +15,14 @@ public static class EnemyAppService
 	{
 		SHPoolsManager.ReleaseGameObject("MountainEnemy", go);
 	}
+
+	public static GameObject CreateGroundEnemy()
+	{
+		return SHPoolsManager.GetGameObject("GroundEnemy");
+	}
+
+	public static void DestroyGroundEnemy(GameObject go)
+	{
+		SHPoolsManager.ReleaseGameObject("GroundEnemy", go);
+	}
 }

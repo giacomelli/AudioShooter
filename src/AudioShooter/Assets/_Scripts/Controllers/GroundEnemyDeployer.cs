@@ -8,7 +8,6 @@ public class GroundEnemyDeployer : SoundMonoBehaviour {
 	public float WaveInterval;
 	public float _minXDeploy;
 	public float _maxXDeploy;
-	public UnityEngine.Object EnemyPrefab;
 	int _waveNumber = 0;
 
 	void Start()
@@ -33,7 +32,7 @@ public class GroundEnemyDeployer : SoundMonoBehaviour {
 		for (int i = 0; i < newestMountains.Length; i++)
 		{
 			var mountain = newestMountains[i];
-			var enemy = (GameObject)Instantiate(EnemyPrefab);
+			var enemy = EnemyAppService.CreateGroundEnemy();
 			var enemyX = UnityEngine.Random.Range(_minXDeploy, _maxXDeploy);
 
 			enemy.transform.position = new Vector3(

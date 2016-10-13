@@ -7,6 +7,7 @@ public class GroundEnemyController : MonoBehaviour {
 	bool _isDead;
 	int _band;
 	bool _canFire = true;
+	Collider _collider;
 
 	public float _dieDelay;
 	public float _dieExplosionForce;
@@ -21,6 +22,20 @@ public class GroundEnemyController : MonoBehaviour {
 	void Start()
 	{
 		_band = GetComponent<SoundConfig>()._band;
+		_collider = GetComponent<Collider>();
+	}
+
+	void OnEnable()
+	{
+		var rb = GetComponent<Rigidbody>();
+
+		if (rb != null)
+		{
+			Destroy(rb);
+			_collider.enabled = true;
+		}
+
+		_isDead = false;
 	}
 
 	void Update()
@@ -67,13 +82,13 @@ public class GroundEnemyController : MonoBehaviour {
 
 			StopCoroutine("ReleaseFire");
 			_isDead = true;
-			gameObject.GetComponent<Collider>().enabled = false;
+			_collider.enabled = false;
 			var rb = gameObject.AddComponent<Rigidbody>();
 			rb.AddExplosionForce(_dieExplosionForce, Vector3.down, 10f);
 
 			yield return new WaitForSeconds(_dieDelay);
 
-			Destroy(gameObject);
+			EnemyAppService.DestroyGroundEnemy(gameObject);
 		}
 	}
 }

@@ -169,6 +169,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1155833884}
   m_RootOrder: 1
+--- !u!1 &207068970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 207068971}
+  - 114: {fileID: 207068972}
+  m_Layer: 0
+  m_Name: GroundEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &207068971
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 207068970}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1244380037}
+  m_RootOrder: 3
+--- !u!114 &207068972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 207068970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75af8f3fb78b43daabb8f35ea48951b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: GroundEnemy
+  Size: 10
+  IsSizeFixed: 0
+  AutoDisableTime: 13
+  RaiseOnGameObjectEnabledInPoolMessage: 0
+  RaiseOnGameObjectDisabledInPoolMessage: 0
+  PrefabName: GroundEnemyPrefab
 --- !u!1 &213027901
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,8 +711,6 @@ MonoBehaviour:
   WaveInterval: 1
   _minXDeploy: -4
   _maxXDeploy: 4
-  EnemyPrefab: {fileID: 1000013189672900, guid: 290192af5ca564ac6878029a3ae5ffb3,
-    type: 2}
 --- !u!114 &990438792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -918,6 +963,7 @@ Transform:
   - {fileID: 1145909032}
   - {fileID: 1443013649}
   - {fileID: 1876569638}
+  - {fileID: 207068971}
   m_Father: {fileID: 2129621045}
   m_RootOrder: 1
 --- !u!114 &1244380038
@@ -1435,8 +1481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaveInterval: 1
-  EnemyPrefab: {fileID: 1000013189672900, guid: 80a647e0606d947e8ba6efdb5b0ce9ae,
-    type: 2}
   DeployYFromSpaceship: 0
 --- !u!114 &1518400051
 MonoBehaviour:
