@@ -26,14 +26,15 @@ public class GroundEnemyDeployer : SoundMonoBehaviour {
 
 	void CreateWave()
 	{
-		var waveSize = Convert.ToInt32(AudioService.AudioBandBuffer[Config._band]);
+		var bandBuffer = AudioService.AudioBandBuffer[Config._band];
+		var waveSize = Convert.ToInt32(bandBuffer);
 		var newestMountains = MountainAppService.GetNewestMountains(waveSize);
 
 		for (int i = 0; i < newestMountains.Length; i++)
 		{
 			var mountain = newestMountains[i];
 			var enemy = EnemyAppService.CreateGroundEnemy();
-			var enemyX = UnityEngine.Random.Range(_minXDeploy, _maxXDeploy);
+			var enemyX = _minXDeploy + (_maxXDeploy - _minXDeploy) * bandBuffer;
 
 			enemy.transform.position = new Vector3(
 				enemyX, 
