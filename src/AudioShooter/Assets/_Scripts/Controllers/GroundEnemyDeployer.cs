@@ -12,7 +12,10 @@ public class GroundEnemyDeployer : SoundMonoBehaviour {
 
 	void Start()
 	{
-		StartCoroutine(Deploy());
+	//	StartCoroutine(Deploy());
+		AudioAnalysisService.SoundTick += delegate {
+			CreateWave();
+		};
 	}
 
 	IEnumerator Deploy()
@@ -26,25 +29,31 @@ public class GroundEnemyDeployer : SoundMonoBehaviour {
 
 	void CreateWave()
 	{
-		var bandBuffer = AudioService.AudioBandBuffer[Config._band];
+		var bandBuffer = AudioAnalysisService.AudioBandBuffer[Config._band];
 		var waveSize = Convert.ToInt32(bandBuffer);
-		var newestMountains = MountainAppService.GetNewestMountains(waveSize);
 
-		for (int i = 0; i < newestMountains.Length; i++)
+		if (bandBuffer > 0)
 		{
-			var mountain = newestMountains[i];
-			var enemy = EnemyAppService.CreateGroundEnemy();
-			var enemyX = _minXDeploy + (_maxXDeploy - _minXDeploy) * bandBuffer;
+			var newestMountains = MountainAppService.GetNewestMountains(waveSize);
 
-			enemy.transform.position = new Vector3(
-				enemyX, 
-				0, 
-				mountain.transform.position.z);
-			
-			enemy.name = "Ground Enemy" + i;
-			enemy.GetComponent<SoundConfig>()._band = Config._band; 
+			for (int i = 0; i < 1; i++)
+			{
+				//var mountain = newestMountains[i];
+				var enemy = EnemyAppService.CreateGroundEnemy();
+				var enemyX = _minXDeploy + (_maxXDeploy - _minXDeploy) * bandBuffer;
+
+				enemy.transform.position = new Vector3(
+					enemyX,
+					0,
+					AudioAnalysisService.Ticks);
+
+				enemy.name = "Ground Enemy" + i;
+				enemy.GetComponent<SoundConfig>()._band = Config._band;
+
+				//Debug.LogFormat("Ground enemy position: {0}", enemy.transform.position);
+			}
+
+			_waveNumber++;
 		}
-
-		_waveNumber++;
 	}
 }

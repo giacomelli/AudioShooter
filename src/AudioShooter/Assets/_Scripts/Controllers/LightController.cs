@@ -16,6 +16,6 @@ public class LightController: SoundMonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		_light.intensity = (AudioService.AudioBandBuffer[Config._band] * (_maxIntensity - _minIntensity)) + _minIntensity;
+		_light.intensity = (AudioAnalysisService.AudioBandBuffer[Config._band] * (_maxIntensity - _minIntensity)) + _minIntensity;
 	}
 }

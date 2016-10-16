@@ -40,7 +40,7 @@ public class GroundEnemyController : MonoBehaviour {
 
 	void Update()
 	{
-		if (_canFire && AudioService.AudioBandBuffer[_band] >= _minAudioBandToFire)
+		if (_canFire && AudioAnalysisService.AudioBandBuffer[_band] >= _minAudioBandToFire)
 		{
 			_canFire = false;
 			Vector3 direction;

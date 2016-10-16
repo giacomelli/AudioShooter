@@ -21,29 +21,32 @@ public class MountainDeployer : MonoBehaviour
 
 	void Start()
 	{
-		StartCoroutine(DeployScenario());
+		//StartCoroutine(DeployScenario());
+		AudioAnalysisService.SoundTick += delegate {
+			DeployScenario();
+		};
 	}
 
-	IEnumerator DeployScenario()
+	void DeployScenario()
 	{
-		while (true)
-		{
+		//while (true)
+		//{
 			_deployNumber++;
 			DeployMountain(_leftMountainStart, _leftMountainBand);
 			DeployMountain(_rightMountainStart, _rightMountainBand);
 
 			Score.Instance.RegisterMountainDeployed();
-			yield return new WaitForSeconds(_deployInterval);
-		}
+		//	yield return new WaitForSeconds(_deployInterval);
+		//}
 	}
 
 	private void DeployMountain(Vector3 mountainStart, int wallBand)
 	{
-		CurrentZ = mountainStart.z + _deployNumber;
+		CurrentZ = AudioAnalysisService.Ticks; // mountainStart.z + _deployNumber;
 		var mountain = MountainAppService.CreateMountain(new Vector3(mountainStart.x, mountainStart.y, CurrentZ));
 		var scale = mountain.transform.localScale;
 
-		var buffer = AudioService.AudioBandBuffer[wallBand];
+		var buffer = AudioAnalysisService.AudioBandBuffer[wallBand];
 		mountain.transform.localScale = new Vector3(buffer * _mountainScaleMultiplier.x, buffer * _mountainScaleMultiplier.y, buffer * _mountainScaleMultiplier.z);
 	}
 }

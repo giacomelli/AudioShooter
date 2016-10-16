@@ -25,6 +25,6 @@ public class ColorTransformer : SoundMonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		_material.color = AudioService.AudioBandBuffer[Config._band] * _colorRange + _minColor;
+		_material.color = AudioAnalysisService.AudioBandBuffer[Config._band] * _colorRange + _minColor;
 	}
 }
