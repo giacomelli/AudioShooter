@@ -23,7 +23,7 @@ public class RotationTransformer : SoundMonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		var bandBuffer = AudioAnalysisService.AudioBandBuffer[Config._band];
+		var bandBuffer = AudioRealtimeService.Instance.AudioBandBuffer[Config._band];
 		var eulerAngles = transform.eulerAngles;
 		var newEulerAngles = new Vector3(
 			_rotationRange.x == 0 ? eulerAngles.x : _rotationRange.x * bandBuffer,

@@ -13,6 +13,6 @@ public class ScaleTransformer : SoundMonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.localScale = AudioAnalysisService.AudioBandBuffer[Config._band] * _scaleRange + _minScale;
+		transform.localScale = AudioRealtimeService.Instance.AudioBandBuffer[Config._band] * _scaleRange + _minScale;
 	}
 }

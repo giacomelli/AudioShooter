@@ -42,7 +42,7 @@ public class MountainEnemyController : MonoBehaviour {
 
 	void Update()
 	{
-		if (_canFire && AudioAnalysisService.AudioBandBuffer[_band] >= _minAudioBandToFire)
+		if (_canFire && AudioRealtimeService.Instance.AudioBandBuffer[_band] >= _minAudioBandToFire)
 		{
 			_canFire = false;
 			var isFromLeftMountain = transform.position.x < 0;

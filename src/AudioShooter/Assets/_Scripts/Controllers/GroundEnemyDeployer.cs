@@ -13,7 +13,7 @@ public class GroundEnemyDeployer : SoundMonoBehaviour {
 	void Start()
 	{
 	//	StartCoroutine(Deploy());
-		AudioAnalysisService.SoundTick += delegate {
+		AudioAnalysisService.Instance.SoundTick += delegate {
 			CreateWave();
 		};
 	}
@@ -29,28 +29,23 @@ public class GroundEnemyDeployer : SoundMonoBehaviour {
 
 	void CreateWave()
 	{
-		var bandBuffer = AudioAnalysisService.AudioBandBuffer[Config._band];
+		var bandBuffer = AudioAnalysisService.Instance.AudioBandBuffer[Config._band];
 		var waveSize = Convert.ToInt32(bandBuffer);
 
 		if (bandBuffer > 0)
 		{
-			var newestMountains = MountainAppService.GetNewestMountains(waveSize);
-
 			for (int i = 0; i < 1; i++)
 			{
-				//var mountain = newestMountains[i];
 				var enemy = EnemyAppService.CreateGroundEnemy();
 				var enemyX = _minXDeploy + (_maxXDeploy - _minXDeploy) * bandBuffer;
 
 				enemy.transform.position = new Vector3(
 					enemyX,
 					0,
-					AudioAnalysisService.Ticks);
+					AudioAnalysisService.Instance.Ticks);
 
 				enemy.name = "Ground Enemy" + i;
 				enemy.GetComponent<SoundConfig>()._band = Config._band;
-
-				//Debug.LogFormat("Ground enemy position: {0}", enemy.transform.position);
 			}
 
 			_waveNumber++;

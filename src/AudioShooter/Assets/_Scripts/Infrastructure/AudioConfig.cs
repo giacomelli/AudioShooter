@@ -5,11 +5,12 @@ using System.Collections;
 public class AudioConfig : MonoBehaviour {
 
 	public static AudioConfig Instance { get; private set; }
-	public AudioSource Music { get; private set; }
+	public AudioSource MusicSource { get; private set; }
+	public float MusicDuration { get; private set; }
 
 	void Awake () {
-		Music = GetComponent<AudioSource>();
-	
+		MusicSource = GetComponent<AudioSource>();
+		MusicDuration = MusicSource.clip.length;
 		Instance = this;
 	}
 
