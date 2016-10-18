@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
 	{
 		Instance = this;
 		_camera = GetComponent<Camera>();
-		AudioAnalysisService.Instance.Analyzed += delegate {
+		AudioRealtimeService.Instance.Started += delegate {
 			_updateAction = () =>
 			{
 				_velocityFraction += Time.deltaTime / AudioConfig.Instance.MusicDuration;
