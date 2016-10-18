@@ -3,21 +3,25 @@ using System.Collections;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using Skahal.Common;
 
 public class AudioRealtimeService : AudioServiceBase
 {
+	// Events.
+	public event EventHandler Started;
+
+	// Fields.
 	Action _updateAction = () => { };
 
+	// Static properties;
 	public static AudioRealtimeService Instance { get; private set;}
+
+	// Editor properties.
+	public int _startsAudioAnalysisWhenSoundTicks;
 
 	void Update()
 	{
 		_updateAction();
-	}
-
-	void GetSpecturumAudioSource()
-	{
-		MusicSource.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
 	}
 
 	protected override void Initialize()
@@ -25,8 +29,13 @@ public class AudioRealtimeService : AudioServiceBase
 		Instance = this;
 		CanUseNegativeFrequencies = true;
 
-		AudioAnalysisService.Instance.Analyzed += delegate {
-			_updateAction = AnalyzeAudio;
+		AudioAnalysisService.Instance.SoundTick += delegate {
+			if (AudioAnalysisService.Instance.Ticks == _startsAudioAnalysisWhenSoundTicks)
+			{
+				_updateAction = AnalyzeAudio;
+				MusicSource.Play();
+				Started.Raise(this);
+			}
 		};
 	}
 

@@ -2,24 +2,28 @@
 using System.Collections;
 using System;
 using Skahal.Common;
+using Skahal.Logging;
 
 public class AudioAnalysisService : AudioServiceBase
 {
-	float[] _audioData;
-
-	public static AudioAnalysisService Instance { get; private set; }
-
-	public float _readSoundSeconds;
-
-	public float _tickSeconds;
-	public int _tickEveryReads;
-	public  event EventHandler SoundTick;
-	public int Ticks { get; private set; }
-	public bool AudioAnalyzed { get; private set; }
-
-
+	// Events.
+	public event EventHandler SoundTick;
 	public event EventHandler Analyzed;
 
+	// Fields.
+	float[] _audioData;
+
+	// Static properties.
+	public static AudioAnalysisService Instance { get; private set; }
+
+	// Editor properties.
+	public float _readSoundSeconds;
+	public float _tickSeconds;
+	public int _tickEveryReads;
+	public float _ticksInterval;
+
+	// Public properties.
+	public int Ticks { get; private set; }
 
 	void Start()
 	{
@@ -64,17 +68,13 @@ public class AudioAnalysisService : AudioServiceBase
 				Debug.LogWarning("tick");
 				soundTicks = 0;
 				SoundTick(this, EventArgs.Empty);
-				MessagesController.Instance.ChangeCentralMessage("Generating {0,2} seconds...".With(Ticks));
-				yield return new WaitForEndOfFrame();
+				SHLog.Debug("Generating {0,2} seconds...", Ticks);
+				yield return new WaitForSeconds(_ticksInterval);
 			}
 		}
 
-		MessagesController.Instance.ChangeCentralMessage("");
-
 		ResetData();
 
-		MusicSource.Play();
-		AudioAnalyzed = true;
 		Analyzed.Raise(this);
 	}
 

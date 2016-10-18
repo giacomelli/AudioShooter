@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: GroundEnemy
-  Size: 10
+  Size: 20
   IsSizeFixed: 0
   AutoDisableTime: 0
   RaiseOnGameObjectEnabledInPoolMessage: 0
@@ -267,6 +267,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  _startsAudioAnalysisWhenSoundTicks: 5
 --- !u!114 &213027904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +292,7 @@ MonoBehaviour:
   _readSoundSeconds: 0.01
   _tickSeconds: 1
   _tickEveryReads: 25
+  _ticksInterval: 0.8
 --- !u!1 &273227858
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +678,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b89449db118f2462ea5a4ee7b00977ca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 86725ba89d0474cd980e427fccab211c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1477,7 +1479,7 @@ MonoBehaviour:
   Name: Mountain
   Size: 24
   IsSizeFixed: 0
-  AutoDisableTime: 0
+  AutoDisableTime: 20
   RaiseOnGameObjectEnabledInPoolMessage: 0
   RaiseOnGameObjectDisabledInPoolMessage: 0
   PrefabName: MountainPrefab
@@ -1837,9 +1839,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: MountainEnemy
-  Size: 24
+  Size: 20
   IsSizeFixed: 0
-  AutoDisableTime: 0
+  AutoDisableTime: 20
   RaiseOnGameObjectEnabledInPoolMessage: 0
   RaiseOnGameObjectDisabledInPoolMessage: 0
   PrefabName: MountainEnemyPrefab
