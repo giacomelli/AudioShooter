@@ -44,8 +44,7 @@ public class AudioAnalysisService : AudioServiceBase
 			secoundsRead += _readSoundSeconds;
 
 			var samplesOffset = Mathf.RoundToInt(secoundsRead * MusicSource.clip.frequency);
-			Debug.Log("offset: " + samplesOffset);
-
+		
 			// Does the music ended?
 			if (samplesOffset + _totalSamples > _audioData.Length)
 			{
@@ -65,10 +64,9 @@ public class AudioAnalysisService : AudioServiceBase
 			{
 				Ticks++;
 
-				Debug.LogWarning("tick");
 				soundTicks = 0;
 				SoundTick(this, EventArgs.Empty);
-				SHLog.Debug("Generating {0,2} seconds...", Ticks);
+				//SHLog.Debug("Generating {0,2} seconds...", Ticks);
 				yield return new WaitForSeconds(_ticksInterval);
 			}
 		}
