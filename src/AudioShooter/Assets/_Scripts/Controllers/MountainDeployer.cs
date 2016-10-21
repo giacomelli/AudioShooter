@@ -11,6 +11,9 @@ public class MountainDeployer : MonoBehaviour
 	public float _deployInterval;
 	public Vector3 _mountainScaleMultiplier;
 
+	[Range(0f, 1f)]
+	public float MinBufferToDeploy;
+
 	[Range(0, 7)]
 	public int _leftMountainBand;
 
@@ -37,13 +40,17 @@ public class MountainDeployer : MonoBehaviour
 
 	private void DeployMountain(Vector3 mountainStart, int wallBand)
 	{
-		CurrentZ = AudioAnalysisService.Instance.Ticks; // mountainStart.z + _deployNumber;
-		var mountain = MountainAppService.CreateMountain(new Vector3(mountainStart.x, mountainStart.y, CurrentZ));
-		var scale = mountain.transform.localScale;
-
 		var buffer = AudioAnalysisService.Instance.AudioBandBuffer[wallBand];
-		mountain.transform.localScale = new Vector3(buffer * _mountainScaleMultiplier.x, buffer * _mountainScaleMultiplier.y, buffer * _mountainScaleMultiplier.z);
+
+		if (buffer >= MinBufferToDeploy)
+		{
+			CurrentZ = AudioAnalysisService.Instance.Ticks;
+			var mountain = MountainAppService.CreateMountain(new Vector3(mountainStart.x, mountainStart.y, CurrentZ));
+			var scale = mountain.transform.localScale;
+
+			mountain.transform.localScale = new Vector3(buffer * _mountainScaleMultiplier.x, buffer * _mountainScaleMultiplier.y, buffer * _mountainScaleMultiplier.z);
+
+			MountainAppService.MarkMountainAsDeployed(mountain);
+		}
 	}
 }
-
-

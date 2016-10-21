@@ -10,4 +10,12 @@ public class SoundMonoBehaviour : MonoBehaviour {
 	void Awake () {
 		Config = GetComponent<SoundConfig>();
 	}
+
+	public float AudioBuffer
+	{
+		get
+		{
+			return AudioAnalysisService.Instance.AudioBandBuffer[Config._band];
+		}
+	}
 }

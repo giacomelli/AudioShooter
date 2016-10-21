@@ -12,19 +12,9 @@ public class GroundEnemyDeployer : SoundMonoBehaviour {
 
 	void Start()
 	{
-	//	StartCoroutine(Deploy());
 		AudioAnalysisService.Instance.SoundTick += delegate {
 			CreateWave();
 		};
-	}
-
-	IEnumerator Deploy()
-	{
-		while (true)
-		{
-			CreateWave();
-			yield return new WaitForSeconds(WaveInterval);
-		}
 	}
 
 	void CreateWave()

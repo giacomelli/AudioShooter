@@ -192,8 +192,11 @@
      <Compile Include="Assets\Skahal-Unity-Scripts\src\Tweening\iTweenHinting.cs" />
      <Compile Include="Assets\Skahal-Unity-Scripts\src\Vector3Helper.cs" />
      <Compile Include="Assets\_Scripts\Application\EnemyAppService.cs" />
+     <Compile Include="Assets\_Scripts\Application\GameObjectEventArgsBase.cs" />
      <Compile Include="Assets\_Scripts\Application\MissileAppService.cs" />
      <Compile Include="Assets\_Scripts\Application\MountainAppService.cs" />
+     <Compile Include="Assets\_Scripts\Application\MountainCreatedEventArgs.cs" />
+     <Compile Include="Assets\_Scripts\Application\MountainDeployedEventArgs.cs" />
      <Compile Include="Assets\_Scripts\Controllers\CameraController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyDeployer.cs" />
