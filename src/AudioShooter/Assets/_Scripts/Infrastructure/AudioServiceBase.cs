@@ -18,6 +18,7 @@ public abstract class AudioServiceBase : MonoBehaviour
 	float[] _audioBand = new float[8];
 
 	public int _totalSamples = 512;
+	public float _bufferIncreaseMultiplier = 1.2f;
 	public float[] AudioBandBuffer = new float[8];
 
 	void Awake()
@@ -90,7 +91,7 @@ public abstract class AudioServiceBase : MonoBehaviour
 			if (_freqBand[g] < _bandBuffer[g])
 			{
 				_bandBuffer[g] -= _bufferDecrease[g];
-				_bufferDecrease[g] *= 1.2f;
+				_bufferDecrease[g] *= _bufferIncreaseMultiplier;
 			}
 		}
 	}
