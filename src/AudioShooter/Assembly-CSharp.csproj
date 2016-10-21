@@ -197,6 +197,7 @@
      <Compile Include="Assets\_Scripts\Controllers\CameraController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyDeployer.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\FpsController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\GroundEnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\GroundEnemyDeployer.cs" />
      <Compile Include="Assets\_Scripts\Controllers\LevelController.cs" />

@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totalSamples: 512
+  _bufferIncreaseMultiplier: 1.2
   AudioBandBuffer:
   - 0
   - 0
@@ -267,7 +268,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  _startsAudioAnalysisWhenSoundTicks: 5
+  _startsAudioAnalysisWhenSoundTicks: 8
 --- !u!114 &213027904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totalSamples: 512
+  _bufferIncreaseMultiplier: 1.2
   AudioBandBuffer:
   - 0
   - 0
@@ -292,7 +294,7 @@ MonoBehaviour:
   _readSoundSeconds: 0.01
   _tickSeconds: 1
   _tickEveryReads: 25
-  _ticksInterval: 0.8
+  _ticksInterval: 0.95
 --- !u!1 &273227858
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +335,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1416021043}
   m_RootOrder: 0
+--- !u!1 &335547053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 335547054}
+  - 222: {fileID: 335547056}
+  - 114: {fileID: 335547055}
+  m_Layer: 5
+  m_Name: FPS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &335547054
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335547053}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2063425434}
+  m_RootOrder: 3
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 15}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &335547055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335547053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 58b647c5b2ec4184e9a07a561cdf0644, type: 3}
+    m_FontSize: 15
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 5
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: FPS
+--- !u!222 &335547056
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335547053}
 --- !u!1 &481764357
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +483,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481764357}
+--- !u!1 &593395220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 593395222}
+  - 114: {fileID: 593395221}
+  m_Layer: 0
+  m_Name: FPS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &593395221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593395220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a3ca497198a4a25856da8cc74edbb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpdateInterval: 0.5
+  _label: {fileID: 335547055}
+--- !u!4 &593395222
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 593395220}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1416021043}
+  m_RootOrder: 4
 --- !u!1 &594063236
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +796,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 86725ba89d0474cd980e427fccab211c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a7fb60ab2038a4825b278680d2d64571, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1434,6 +1552,7 @@ Transform:
   - {fileID: 658364125}
   - {fileID: 1323663791}
   - {fileID: 1052020642}
+  - {fileID: 593395222}
   m_Father: {fileID: 0}
   m_RootOrder: 6
 --- !u!1 &1443013648
@@ -1479,7 +1598,7 @@ MonoBehaviour:
   Name: Mountain
   Size: 24
   IsSizeFixed: 0
-  AutoDisableTime: 20
+  AutoDisableTime: 21
   RaiseOnGameObjectEnabledInPoolMessage: 0
   RaiseOnGameObjectDisabledInPoolMessage: 0
   PrefabName: MountainPrefab
@@ -1841,7 +1960,7 @@ MonoBehaviour:
   Name: MountainEnemy
   Size: 20
   IsSizeFixed: 0
-  AutoDisableTime: 20
+  AutoDisableTime: 21
   RaiseOnGameObjectEnabledInPoolMessage: 0
   RaiseOnGameObjectDisabledInPoolMessage: 0
   PrefabName: MountainEnemyPrefab
@@ -2024,6 +2143,7 @@ RectTransform:
   - {fileID: 1567709367}
   - {fileID: 847132117}
   - {fileID: 481764358}
+  - {fileID: 335547054}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_AnchorMin: {x: 0, y: 0}
