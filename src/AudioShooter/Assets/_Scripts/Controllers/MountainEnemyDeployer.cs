@@ -21,7 +21,7 @@ public class MountainEnemyDeployer : SoundMonoBehaviour
 
 	void CreateEnemyToMountain(GameObject mountain)
 	{
-		if (AudioBuffer >= MinBufferToDeploy)
+		if (CreationMetric >= MinBufferToDeploy)
 		{
 			var mountainBounds = mountain.GetComponent<MeshFilter>().mesh.bounds;
 			var enemy = EnemyAppService.CreateMountainEnemy();

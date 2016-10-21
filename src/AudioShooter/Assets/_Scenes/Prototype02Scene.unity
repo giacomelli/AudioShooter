@@ -101,6 +101,8 @@ GameObject:
   - 33: {fileID: 68461926}
   - 64: {fileID: 68461925}
   - 23: {fileID: 68461924}
+  - 114: {fileID: 68461929}
+  - 114: {fileID: 68461928}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -169,6 +171,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1155833884}
   m_RootOrder: 1
+--- !u!114 &68461928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68461923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8133dd82c23a94da8b104d3324e3d180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minColor: {r: 0, g: 0, b: 0, a: 0}
+  _maxColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
+  RandomColor: 0
+--- !u!114 &68461929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 68461923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b40981a1fe14068a9fe34abb7beed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _band: 7
+  _randomBand: 0
 --- !u!1 &207068970
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +656,41 @@ Prefab:
         type: 2}
       propertyPath: _missileVelocity
       value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
+        type: 2}
+      propertyPath: _minScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
+        type: 2}
+      propertyPath: _minScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
+        type: 2}
+      propertyPath: _minScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
+        type: 2}
+      propertyPath: _maxScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
+        type: 2}
+      propertyPath: _maxScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
+        type: 2}
+      propertyPath: _maxScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 959d4155d399d47babea26fbd35138eb, type: 2}

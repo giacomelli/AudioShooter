@@ -4,7 +4,8 @@ using System;
 
 public class MountainCreatedEventArgs : GameObjectEventArgsBase {
 
-	public MountainCreatedEventArgs(GameObject mountain) : base(mountain)
+	public MountainCreatedEventArgs(GameObject mountain) 
+		: base(mountain)
 	{
 	}
 }
