@@ -21,7 +21,6 @@ public class MountainDeployer : MonoBehaviour
 
 	void Start()
 	{
-		//StartCoroutine(DeployScenario());
 		AudioAnalysisService.Instance.SoundTick += delegate {
 			DeployScenario();
 		};
@@ -29,15 +28,11 @@ public class MountainDeployer : MonoBehaviour
 
 	void DeployScenario()
 	{
-		//while (true)
-		//{
-			_deployNumber++;
-			DeployMountain(_leftMountainStart, _leftMountainBand);
-			DeployMountain(_rightMountainStart, _rightMountainBand);
+		_deployNumber++;
+		DeployMountain(_leftMountainStart, _leftMountainBand);
+		DeployMountain(_rightMountainStart, _rightMountainBand);
 
-			Score.Instance.RegisterMountainDeployed();
-		//	yield return new WaitForSeconds(_deployInterval);
-		//}
+		Score.Instance.RegisterMountainDeployed();
 	}
 
 	private void DeployMountain(Vector3 mountainStart, int wallBand)
