@@ -3,9 +3,8 @@ using System.Collections;
 using System;
 
 [RequireComponent(typeof(SoundConfig))]
-public class MountainEnemyController : MonoBehaviour {
+public class MountainEnemyController : SoundMonoBehaviour {
 	bool _isDead;
-	int _band;
 	Bounds _bounds;
 	bool _canFire = true;
 	Collider _collider;
@@ -21,7 +20,6 @@ public class MountainEnemyController : MonoBehaviour {
 
 	void Start()
 	{
-		_band = GetComponent<SoundConfig>()._band;
 		_bounds = GetComponent<MeshFilter>().mesh.bounds;
 		_collider = gameObject.GetComponent<Collider>();
 	}
@@ -42,7 +40,21 @@ public class MountainEnemyController : MonoBehaviour {
 
 	void Update()
 	{
-		if (_canFire && AudioRealtimeService.Instance.AudioBandBuffer[_band] >= _minAudioBandToFire)
+		if (BehaviourMetric >= _minAudioBandToFire)
+		{
+			Fire();
+		}
+	}
+
+	IEnumerator ReleaseFire()
+	{
+		yield return new WaitForSeconds(_fireInterval);
+		_canFire = true;
+	}
+
+	void Fire()
+	{
+		if (_canFire)
 		{
 			_canFire = false;
 			var isFromLeftMountain = transform.position.x < 0;
@@ -52,12 +64,6 @@ public class MountainEnemyController : MonoBehaviour {
 			MissileAppService.CreateMissile(gameObject, missilePosition, direction, _missileVelocity);
 			StartCoroutine(ReleaseFire());
 		}
-	}
-
-	IEnumerator ReleaseFire()
-	{
-		yield return new WaitForSeconds(_fireInterval);
-		_canFire = true;
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -83,5 +89,10 @@ public class MountainEnemyController : MonoBehaviour {
 
 			EnemyAppService.DestroyMountainEnemy(gameObject);
 		}
+	}
+
+	void MetricChanged()
+	{
+		Fire();
 	}
 }
