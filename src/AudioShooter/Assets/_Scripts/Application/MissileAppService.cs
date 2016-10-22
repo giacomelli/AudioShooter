@@ -1,8 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Linq;
-using System.Collections.Generic;
-using System;
 
 public static class MissileAppService 
 {
@@ -22,6 +18,3 @@ public static class MissileAppService
 		SHPoolsManager.ReleaseGameObject("Missile", gameObject);
 	}
 }
-
-
-
