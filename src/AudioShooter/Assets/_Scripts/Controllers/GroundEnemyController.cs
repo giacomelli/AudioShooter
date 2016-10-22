@@ -3,9 +3,8 @@ using System.Collections;
 using System;
 
 [RequireComponent(typeof(SoundConfig))]
-public class GroundEnemyController : MonoBehaviour {
+public class GroundEnemyController : SoundMonoBehaviour {
 	bool _isDead;
-	int _band;
 	bool _canFire = true;
 	Collider _collider;
 
@@ -21,7 +20,6 @@ public class GroundEnemyController : MonoBehaviour {
 
 	void Start()
 	{
-		_band = GetComponent<SoundConfig>()._band;
 		_collider = GetComponent<Collider>();
 	}
 
@@ -40,7 +38,9 @@ public class GroundEnemyController : MonoBehaviour {
 
 	void Update()
 	{
-		if (_canFire && AudioRealtimeService.Instance.AudioBandBuffer[_band] >= _minAudioBandToFire)
+		var metric = BehaviourMetric;
+
+		if (_canFire && metric >= _minAudioBandToFire)
 		{
 			_canFire = false;
 			Vector3 direction;
@@ -55,7 +55,7 @@ public class GroundEnemyController : MonoBehaviour {
 				direction = transform.position.x < 0 ? Vector3.right : Vector3.left;
 			}
 
-			MissileAppService.CreateMissile(gameObject, transform.position, direction, _missileVelocity);
+			MissileAppService.CreateMissile(gameObject, transform.position, direction, _missileVelocity * metric);
 			StartCoroutine(ReleaseFire());
 		}
 	}
