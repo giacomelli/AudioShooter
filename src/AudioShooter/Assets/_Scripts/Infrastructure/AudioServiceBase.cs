@@ -4,6 +4,8 @@ using System;
 
 public abstract class AudioServiceBase : MonoBehaviour
 {
+	public const int TotalBands = 8;
+
 	protected int _samplesMultiplier;
 
 
@@ -11,15 +13,15 @@ public abstract class AudioServiceBase : MonoBehaviour
 	protected AudioSource MusicSource { get; private set; }
 	protected bool CanUseNegativeFrequencies { get; set; }
 	protected float[] _samples;
-	float[] _freqBand = new float[8];
-	float[] _bandBuffer = new float[8];
-	float[] _bufferDecrease = new float[8];
-	float[] _freqBandHighest = new float[8];
-	float[] _audioBand = new float[8];
+	float[] _freqBand = new float[TotalBands];
+	float[] _bandBuffer = new float[TotalBands];
+	float[] _bufferDecrease = new float[TotalBands];
+	float[] _freqBandHighest = new float[TotalBands];
+	float[] _audioBand = new float[TotalBands];
 
 	public int _totalSamples = 512;
 	public float _bufferIncreaseMultiplier = 1.2f;
-	public float[] AudioBandBuffer = new float[8];
+	public float[] AudioBandBuffer = new float[TotalBands];
 
 	void Awake()
 	{
@@ -33,12 +35,12 @@ public abstract class AudioServiceBase : MonoBehaviour
 
 	protected void ResetData()
 	{
-		_freqBand = new float[8];
-		_bandBuffer = new float[8];
-		_bufferDecrease = new float[8];
-		_freqBandHighest = new float[8];
-		_audioBand = new float[8];
-		AudioBandBuffer = new float[8];
+		_freqBand = new float[TotalBands];
+		_bandBuffer = new float[TotalBands];
+		_bufferDecrease = new float[TotalBands];
+		_freqBandHighest = new float[TotalBands];
+		_audioBand = new float[TotalBands];
+		AudioBandBuffer = new float[TotalBands];
 	}
 
 	protected void AnalyzeAudio()
@@ -55,7 +57,7 @@ public abstract class AudioServiceBase : MonoBehaviour
 	{
 		int count = 0;
 
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < TotalBands; i++)
 		{
 			float average = 0;
 			int sampleCount = (int)Mathf.Pow(2, i) * _samplesMultiplier;
@@ -80,7 +82,7 @@ public abstract class AudioServiceBase : MonoBehaviour
 
 	protected void BandBuffer()
 	{
-		for (int g = 0; g < 8; g++)
+		for (int g = 0; g < TotalBands; g++)
 		{
 			if (_freqBand[g] > _bandBuffer[g])
 			{
@@ -98,7 +100,7 @@ public abstract class AudioServiceBase : MonoBehaviour
 
 	protected void CreateAudioBands()
 	{
-		for (int i = 0; i < 8; i++)
+		for (int i = 0; i < TotalBands; i++)
 		{
 			if (_freqBand[i] > _freqBandHighest[i])
 			{
@@ -108,7 +110,12 @@ public abstract class AudioServiceBase : MonoBehaviour
 			_audioBand[i] = _freqBand[i] / _freqBandHighest[i];
 			var newBandBuffer = _bandBuffer[i] / _freqBandHighest[i];
 
-			AudioBandBuffer[i] = float.IsNaN(newBandBuffer) ? 0f : newBandBuffer;
+			if (float.IsNaN(newBandBuffer))
+			{
+				newBandBuffer = 0f;
+			}
+
+			AudioBandBuffer[i] = newBandBuffer;
 		}
 	}
 }
