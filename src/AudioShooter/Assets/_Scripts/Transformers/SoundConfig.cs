@@ -20,4 +20,9 @@ public class SoundConfig : MonoBehaviour {
 	{
 		return UnityEngine.Random.Range(0, 7);
 	}
+
+	void OnDrawGizmos()
+	{
+		UnityEditor.Handles.Label(transform.position, _band.ToString());
+	}
 }
