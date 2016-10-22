@@ -106,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a1c828c2c444335ba9dcdc733896d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metricChangedInverval: 0
+  _raiseMetricChangedThreshold: 0
   _minScale: {x: 1, y: 1, z: 0.5}
   _maxScale: {x: 4, y: 1, z: 0.5}
 --- !u!114 &114000010943766110
@@ -119,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8133dd82c23a94da8b104d3324e3d180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metricChangedInverval: 0
+  _raiseMetricChangedThreshold: 0
   _minColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 0}
   _maxColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
   RandomColor: 0
@@ -146,11 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25908033842e1426582da82510876b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metricChangedInverval: 0.5
+  _raiseMetricChangedThreshold: 0
   _dieDelay: 2
   _dieExplosionForce: 200
-  _minAudioBandToFire: 1
-  _fireInterval: 1
-  _missileVelocity: 0.002
+  _minAudioBandToFire: 0.8
+  _fireInterval: 2
+  _missileVelocity: 0.005
 --- !u!114 &114000013699214374
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3f8cdcb21704c53bbbedb3bf8db1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _metricChangedInverval: 0
+  _raiseMetricChangedThreshold: 0
   _minRotation: {x: 0, y: 0, z: 0}
   _maxRotation: {x: 0, y: 360, z: 0}
   RandomRotation: 0
