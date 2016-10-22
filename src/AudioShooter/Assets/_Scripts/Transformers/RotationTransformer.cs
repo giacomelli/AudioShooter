@@ -8,7 +8,6 @@ public class RotationTransformer : SoundMonoBehaviour {
 
 	Vector3 _rotationRange;
 
-	// Use this for initialization
 	void Start () {
 
 		if (RandomRotation)
@@ -20,15 +19,15 @@ public class RotationTransformer : SoundMonoBehaviour {
 		_rotationRange = _maxRotation - _minRotation;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
-		var bandBuffer = AudioRealtimeService.Instance.AudioBandBuffer[Config._band];
+		var metric = BehaviourMetric;
+	
 		var eulerAngles = transform.eulerAngles;
 		var newEulerAngles = new Vector3(
-			_rotationRange.x == 0 ? eulerAngles.x : _rotationRange.x * bandBuffer,
-			_rotationRange.y == 0 ? eulerAngles.y : _rotationRange.y * bandBuffer,
-			_rotationRange.z == 0 ? eulerAngles.z : _rotationRange.z * bandBuffer);
+			_rotationRange.x == 0 ? eulerAngles.x : _rotationRange.x * metric,
+			_rotationRange.y == 0 ? eulerAngles.y : _rotationRange.y * metric,
+			_rotationRange.z == 0 ? eulerAngles.z : _rotationRange.z * metric);
 
 		transform.eulerAngles = newEulerAngles;
 	}
