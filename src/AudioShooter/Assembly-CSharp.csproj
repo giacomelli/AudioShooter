@@ -197,6 +197,7 @@
      <Compile Include="Assets\_Scripts\Application\MountainAppService.cs" />
      <Compile Include="Assets\_Scripts\Application\MountainCreatedEventArgs.cs" />
      <Compile Include="Assets\_Scripts\Application\MountainDeployedEventArgs.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\AudioServiceConsoleController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\CameraController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyDeployer.cs" />
