@@ -213,6 +213,8 @@
      <Compile Include="Assets\_Scripts\Controllers\MountainEnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\MountainEnemyDeployer.cs" />
      <Compile Include="Assets\_Scripts\Controllers\ScoreController.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\SkyEnemyController.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\SkyEnemyDeployer.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SoundMonoBehaviour.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SpaceshipController.cs" />
      <Compile Include="Assets\_Scripts\Domain\Score.cs" />
