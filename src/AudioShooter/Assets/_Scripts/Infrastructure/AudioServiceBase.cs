@@ -13,14 +13,15 @@ public abstract class AudioServiceBase : MonoBehaviour
 	protected AudioSource MusicSource { get; private set; }
 	protected bool CanUseNegativeFrequencies { get; set; }
 	protected float[] _samples;
-	float[] _freqBand = new float[TotalBands];
 	float[] _bandBuffer = new float[TotalBands];
 	float[] _bufferDecrease = new float[TotalBands];
 	float[] _freqBandHighest = new float[TotalBands];
 	float[] _audioBand = new float[TotalBands];
 
 	public int _totalSamples = 512;
+	public float _bufferDecreaseStart = 0.005f;
 	public float _bufferIncreaseMultiplier = 1.2f;
+	public float[] AudioFrequencyBand = new float[TotalBands];
 	public float[] AudioBandBuffer = new float[TotalBands];
 
 	void Awake()
@@ -35,7 +36,7 @@ public abstract class AudioServiceBase : MonoBehaviour
 
 	protected void ResetData()
 	{
-		_freqBand = new float[TotalBands];
+		AudioFrequencyBand = new float[TotalBands];
 		_bandBuffer = new float[TotalBands];
 		_bufferDecrease = new float[TotalBands];
 		_freqBandHighest = new float[TotalBands];
@@ -72,10 +73,10 @@ public abstract class AudioServiceBase : MonoBehaviour
 
 			if (CanUseNegativeFrequencies)
 			{
-				_freqBand[i] = average * 10;
+				AudioFrequencyBand[i] = average * 10;
 			}
 			else {
-				_freqBand[i] = Mathf.Sign(average) == 1f ? average * 20 : average * -10;
+				AudioFrequencyBand[i] = Mathf.Sign(average) == 1f ? average * 20 : average * -10;
 			}
 		}
 	}
@@ -84,13 +85,13 @@ public abstract class AudioServiceBase : MonoBehaviour
 	{
 		for (int g = 0; g < TotalBands; g++)
 		{
-			if (_freqBand[g] > _bandBuffer[g])
+			if (AudioFrequencyBand[g] > _bandBuffer[g])
 			{
-				_bandBuffer[g] = _freqBand[g];
-				_bufferDecrease[g] = 0.005f;
+				_bandBuffer[g] = AudioFrequencyBand[g];
+				_bufferDecrease[g] = _bufferDecreaseStart;
 			}
 
-			if (_freqBand[g] < _bandBuffer[g])
+			if (AudioFrequencyBand[g] < _bandBuffer[g])
 			{
 				_bandBuffer[g] -= _bufferDecrease[g];
 				_bufferDecrease[g] *= _bufferIncreaseMultiplier;
@@ -102,12 +103,12 @@ public abstract class AudioServiceBase : MonoBehaviour
 	{
 		for (int i = 0; i < TotalBands; i++)
 		{
-			if (_freqBand[i] > _freqBandHighest[i])
+			if (AudioFrequencyBand[i] > _freqBandHighest[i])
 			{
-				_freqBandHighest[i] = _freqBand[i];
+				_freqBandHighest[i] = AudioFrequencyBand[i];
 			}
 
-			_audioBand[i] = _freqBand[i] / _freqBandHighest[i];
+			_audioBand[i] = AudioFrequencyBand[i] / _freqBandHighest[i];
 			var newBandBuffer = _bandBuffer[i] / _freqBandHighest[i];
 
 			if (float.IsNaN(newBandBuffer))
