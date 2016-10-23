@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _velocity: 0.02
   _distance: 50
+  _dieDelay: 1
 --- !u!114 &114000013028691330
 MonoBehaviour:
   m_ObjectHideFlags: 1

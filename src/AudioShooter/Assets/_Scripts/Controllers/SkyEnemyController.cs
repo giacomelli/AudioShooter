@@ -8,6 +8,7 @@ public class SkyEnemyController : SoundMonoBehaviour {
 	bool _canFire = true;
 	Collider _collider;
 
+	// TODO: move to a base class.
 	public float _dieDelay;
 	public float _dieExplosionForce;
 
