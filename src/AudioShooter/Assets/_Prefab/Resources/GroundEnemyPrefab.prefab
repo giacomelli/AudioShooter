@@ -106,8 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77a1c828c2c444335ba9dcdc733896d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _RaiseMetricChangedThreshold: 0
   _minScale: {x: 1, y: 0.4, z: 1}
   _maxScale: {x: 1, y: 0.8, z: 1}
 --- !u!114 &114000010351840010
@@ -121,11 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53204ca9ed86249e2ace8ea1fca21014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _RaiseMetricChangedThreshold: 0.5
   _dieDelay: 2
   _dieExplosionForce: 200
-  _minAudioBandToFire: 0.9
+  _minAudioBandToFire: 0.8
   _fireInterval: 1
   _missileVelocity: 0.0015
   _targetSpaceship: 1
@@ -140,8 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8133dd82c23a94da8b104d3324e3d180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _RaiseMetricChangedThreshold: 0
   _minColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 0}
   _maxColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
   RandomColor: 0
@@ -169,8 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3f8cdcb21704c53bbbedb3bf8db1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _RaiseMetricChangedThreshold: 0
   _minRotation: {x: 0, y: 0, z: 0}
   _maxRotation: {x: 0, y: 360, z: 0}
   RandomRotation: 0
