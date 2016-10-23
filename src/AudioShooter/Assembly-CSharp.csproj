@@ -217,7 +217,7 @@
      <Compile Include="Assets\_Scripts\Controllers\SpaceshipController.cs" />
      <Compile Include="Assets\_Scripts\Domain\Score.cs" />
      <Compile Include="Assets\_Scripts\Domain\Spaceship.cs" />
-     <Compile Include="Assets\_Scripts\Extensions\ColliderExtensions.cs" />
+     <Compile Include="Assets\_Scripts\Extensions\ComponentExtensions.cs" />
      <Compile Include="Assets\_Scripts\Infrastructure\AudioAnalysisService.cs" />
      <Compile Include="Assets\_Scripts\Infrastructure\AudioConfig.cs" />
      <Compile Include="Assets\_Scripts\Infrastructure\AudioRealtimeService.cs" />

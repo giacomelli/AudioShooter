@@ -182,8 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8133dd82c23a94da8b104d3324e3d180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   _minColor: {r: 0, g: 0, b: 0, a: 0}
   _maxColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0}
   RandomColor: 0
@@ -243,7 +241,7 @@ MonoBehaviour:
   Name: GroundEnemy
   Size: 20
   IsSizeFixed: 0
-  AutoDisableTime: 0
+  AutoDisableTime: 21
   RaiseOnGameObjectEnabledInPoolMessage: 0
   RaiseOnGameObjectDisabledInPoolMessage: 0
   PrefabName: GroundEnemyPrefab
@@ -288,7 +286,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totalSamples: 512
+  _bufferDecreaseStart: 0.005
   _bufferIncreaseMultiplier: 1.2
+  AudioFrequencyBand:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   AudioBandBuffer:
   - 0
   - 0
@@ -744,6 +752,11 @@ Prefab:
       propertyPath: _maxScale.z
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012261164816, guid: 959d4155d399d47babea26fbd35138eb,
+        type: 2}
+      propertyPath: _lifes
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
   m_IsPrefabParent: 0
@@ -913,7 +926,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 32a8dc5114b694d09a33afde0b702522, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a7fb60ab2038a4825b278680d2d64571, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1019,8 +1032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7017e840aac4d4db1b61d230bf6a45ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   WaveInterval: 1
   _minXDeploy: -4
   _maxXDeploy: 4
@@ -1121,7 +1132,7 @@ MonoBehaviour:
   Name: Missile
   Size: 80
   IsSizeFixed: 0
-  AutoDisableTime: 10
+  AutoDisableTime: 30
   RaiseOnGameObjectEnabledInPoolMessage: 0
   RaiseOnGameObjectDisabledInPoolMessage: 0
   PrefabName: MissilePrefab
@@ -1231,8 +1242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db73d2e2c3794667b9477c0e9434084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   _minIntensity: 1
   _maxIntensity: 4
 --- !u!114 &1191141380
@@ -1333,7 +1342,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totalSamples: 512
-  _bufferIncreaseMultiplier: 1.2
+  _bufferDecreaseStart: 0.01
+  _bufferIncreaseMultiplier: 1.1
+  AudioFrequencyBand:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   AudioBandBuffer:
   - 0
   - 0
@@ -1461,8 +1480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db73d2e2c3794667b9477c0e9434084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   _minIntensity: 1
   _maxIntensity: 4
 --- !u!114 &1372286101
@@ -1628,8 +1645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3f8cdcb21704c53bbbedb3bf8db1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   _minRotation: {x: 0, y: -1, z: -1}
   _maxRotation: {x: 0, y: 1, z: 1}
   RandomRotation: 0
@@ -1657,8 +1672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8212a4d37c13c4d64af22d22a3425b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   _minPosition: {x: 0, y: 15, z: 0}
   _maxPosition: {x: 0, y: 17, z: 0}
 --- !u!114 &1406573943
@@ -1856,8 +1869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69a57fa0f97c48adb0911a3257cf7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   WaveInterval: 1
   DeployYFromSpaceship: 0
   MinBufferToDeploy: 0.5
@@ -2099,8 +2110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db73d2e2c3794667b9477c0e9434084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   _minIntensity: 1
   _maxIntensity: 4
 --- !u!108 &1874516817
@@ -2239,8 +2248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db73d2e2c3794667b9477c0e9434084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _metricChangedInverval: 0
-  _raiseMetricChangedThreshold: 0
   _minIntensity: 1
   _maxIntensity: 4
 --- !u!108 &2021364659
