@@ -13,6 +13,6 @@ public class PositionTransformer : SoundMonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.position = AudioService.AudioBandBuffer[Config._band] * _positionRange + _minPosition;
+		transform.position = AudioRealtimeService.Instance.AudioBandBuffer[Config._band] * _positionRange + _minPosition;
 	}
 }

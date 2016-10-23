@@ -10,4 +10,21 @@ public class SoundMonoBehaviour : MonoBehaviour {
 	void Awake () {
 		Config = GetComponent<SoundConfig>();
 	}
+
+	public float CreationMetric
+	{
+		get
+		{
+			return AudioAnalysisService.Instance.AudioBandBuffer[Config._band];
+		}
+	}
+
+	public float BehaviourMetric
+	{
+		get
+		{
+			return AudioRealtimeService.Instance.AudioBandBuffer[Config._band];
+		}
+	}
+
 }
