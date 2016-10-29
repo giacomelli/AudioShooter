@@ -7,7 +7,7 @@ public class MissileController : MonoBehaviour {
 	Vector3 _direction;
 	bool _friendlyFire;
 	Collider _collider;
-	GameObject _body;
+	Renderer _renderer;
 
 	public float _velocity;
 	public float _distance;
@@ -22,12 +22,13 @@ public class MissileController : MonoBehaviour {
 		_friendlyFire = friendlyFire;
 		_target = transform.position + (_direction * _distance);
 		_collider.enabled = true;
+		_renderer.enabled = true;
 	}
 
 	void Awake()
 	{
 		_collider = GetComponent<Collider>();
-		_body = transform.FindChild("Body").gameObject;
+		_renderer = GetComponentInChildren<Renderer>();
 	}
 
 	void Update () {
@@ -47,6 +48,9 @@ public class MissileController : MonoBehaviour {
 	IEnumerator Die()
 	{
 		_collider.enabled = false;
+		_renderer.enabled = false;
+
+		MissileAppService.CreateMissileExplosion(transform.position);
 
 		yield return new WaitForSeconds(_dieDelay);
 
