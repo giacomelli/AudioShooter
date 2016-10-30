@@ -77,6 +77,7 @@ public class SpaceshipController : MonoBehaviour {
 			if (Input.GetKey(KeyCode.X))
 			{
 				direction = Vector3.forward;
+				_fireSound.panStereo = 0;
 			}
 			else
 			{
@@ -84,12 +85,14 @@ public class SpaceshipController : MonoBehaviour {
 				if (Input.GetKey(KeyCode.Z))
 				{
 					direction = Vector3.left;
+					_fireSound.panStereo = -1;
 				}
 
 				// Right fire.
 				if (Input.GetKey(KeyCode.C))
 				{
 					direction = Vector3.right;
+					_fireSound.panStereo = 1;
 				}
 			}
 
