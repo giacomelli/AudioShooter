@@ -13,6 +13,15 @@ public static class MissileAppService
 		return go;
 	}
 
+	public static GameObject CreateMissileTargetingSpaceship(GameObject shooter, float velocity)
+	{
+		var pos = shooter.transform.position;
+		var direction = SpaceshipController.Instance.transform.position - pos;
+		direction = direction / direction.magnitude;
+
+		return CreateMissile(shooter, pos, direction, velocity); 
+	}
+
 	public static void DestroyMissile(GameObject gameObject)
 	{
 		SHPoolsManager.ReleaseGameObject("Missile", gameObject);
