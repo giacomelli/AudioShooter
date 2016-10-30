@@ -25,7 +25,7 @@ public class SpaceshipController : MonoBehaviour {
 		Model = new Spaceship(_lifes);
 		Model.Dead += (sender, e) =>
 		{
-			GetComponent<MeshRenderer>().enabled = false;
+			gameObject.SetActive(false);
 		};
 
 		Instance = this;
