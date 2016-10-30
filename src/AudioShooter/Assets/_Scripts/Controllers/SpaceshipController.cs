@@ -15,6 +15,8 @@ public class SpaceshipController : MonoBehaviour {
 	public float _fireInterval;
 	public int _lifes;
 	public float _missileVelocity;
+	public AudioSource _fireSound;
+	public AudioSource _hitSound;
 
 	public Spaceship Model { get; private set;}
 
@@ -68,28 +70,36 @@ public class SpaceshipController : MonoBehaviour {
 	{
 		if (_canFire)
 		{
+			Vector3? direction = null;
+
 			// Front fire.
 			if (Input.GetKey(KeyCode.X))
 			{
-				MissileAppService.CreateMissile(gameObject, transform.position, Vector3.forward, _missileVelocity);
+				direction = Vector3.forward;
 			}
 			else
 			{
 				// Left fire.
 				if (Input.GetKey(KeyCode.Z))
 				{
-					MissileAppService.CreateMissile(gameObject, transform.position, Vector3.left, _missileVelocity);
+					direction = Vector3.left;
 				}
 
 				// Right fire.
 				if (Input.GetKey(KeyCode.C))
 				{
-					MissileAppService.CreateMissile(gameObject, transform.position, Vector3.right, _missileVelocity);
+					direction = Vector3.right;
 				}
 			}
 
-			_canFire = false;
-			StartCoroutine(ReleaseFire());
+			if (direction.HasValue)
+			{
+				MissileAppService.CreateMissile(gameObject, transform.position, direction.Value, _missileVelocity);
+				_fireSound.Play();
+			
+				_canFire = false;
+				StartCoroutine(ReleaseFire());
+			}
 		}
 	}
 
@@ -110,6 +120,7 @@ public class SpaceshipController : MonoBehaviour {
 	{
 		if (other.IsEnemyMissile() || other.IsMountain() || other.IsEnemy())
 		{
+			_hitSound.Play();
 			Model.Hit();
 		}
 	}

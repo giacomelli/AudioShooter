@@ -749,80 +749,15 @@ Prefab:
       propertyPath: m_Name
       value: Spaceship
       objectReference: {fileID: 0}
-    - target: {fileID: 65000012692510354, guid: 959d4155d399d47babea26fbd35138eb,
+    - target: {fileID: 82000010551999364, guid: 959d4155d399d47babea26fbd35138eb,
         type: 2}
-      propertyPath: m_Size.x
+      propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 65000012692510354, guid: 959d4155d399d47babea26fbd35138eb,
+    - target: {fileID: 82000010551999364, guid: 959d4155d399d47babea26fbd35138eb,
         type: 2}
-      propertyPath: m_Size.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012261164816, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: _missileVelocity
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: _minScale.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: _minScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: _minScale.z
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: _maxScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: _maxScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010092370970, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: _maxScale.z
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012261164816, guid: 959d4155d399d47babea26fbd35138eb,
-        type: 2}
-      propertyPath: _lifes
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013200279898, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000013743107532, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012904438694, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010258261832, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010784226094, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
-      propertyPath: m_Layer
-      value: 8
+      propertyPath: m_Pitch
+      value: 1.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 959d4155d399d47babea26fbd35138eb, type: 2}
