@@ -5,7 +5,6 @@ public class MissileController : MonoBehaviour {
 
 	Vector3 _target;
 	Vector3 _direction;
-	bool _friendlyFire;
 	Collider _collider;
 	Renderer _renderer;
 
@@ -15,11 +14,10 @@ public class MissileController : MonoBehaviour {
 
 	public GameObject Shooter { get; private set; }
 
-	public void Initialize(GameObject shooter, Vector3 direction, bool friendlyFire)
+	public void Initialize(GameObject shooter, Vector3 direction)
 	{
 		Shooter = shooter;
 		_direction = direction;
-		_friendlyFire = friendlyFire;
 		_target = transform.position + (_direction * _distance);
 		_collider.enabled = true;
 		_renderer.enabled = true;
@@ -37,9 +35,7 @@ public class MissileController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		var allowFriendlyFire = _friendlyFire || (this.Shooter.transform.IsEnemy() ^ other.IsEnemy());
-
-		if (allowFriendlyFire && ((other.IsEnemy() && other.gameObject != Shooter)) || other.IsMountain())
+		if ((other.gameObject != Shooter && this.Shooter.transform.IsEnemy() != other.IsEnemy()) || other.IsMountain())
 		{
 			StartCoroutine(Die());
 		}
