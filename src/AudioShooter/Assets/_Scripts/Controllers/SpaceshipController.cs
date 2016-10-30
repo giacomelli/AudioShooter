@@ -25,6 +25,7 @@ public class SpaceshipController : MonoBehaviour {
 		Model = new Spaceship(_lifes);
 		Model.Dead += (sender, e) =>
 		{
+			ExplosionAppService.CreateSpaceshipExplosion(transform.position);
 			gameObject.SetActive(false);
 		};
 

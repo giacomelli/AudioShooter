@@ -26,17 +26,4 @@ public static class MissileAppService
 	{
 		SHPoolsManager.ReleaseGameObject("Missile", gameObject);
 	}
-
-	public static GameObject CreateMissileExplosion(Vector3 position)
-	{
-		var go = SHPoolsManager.GetGameObject("MissileExplosion");
-		go.GetComponent<ExplosionController>().Explode(position);
-
-		return go;
-	}
-
-	public static void DestroyMissileExplosion(GameObject gameObject)
-	{
-		SHPoolsManager.ReleaseGameObject("MissileExplosion", gameObject);
-	}
 }

@@ -50,7 +50,7 @@ public class MissileController : MonoBehaviour {
 		_collider.enabled = false;
 		_renderer.enabled = false;
 
-		MissileAppService.CreateMissileExplosion(transform.position);
+		ExplosionAppService.CreateMissileExplosion(transform.position);
 
 		yield return new WaitForSeconds(_dieDelay);
 
