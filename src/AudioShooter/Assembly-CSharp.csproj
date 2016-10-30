@@ -199,7 +199,7 @@
      <Compile Include="Assets\_Scripts\Application\MountainDeployedEventArgs.cs" />
      <Compile Include="Assets\_Scripts\Controllers\AudioServiceConsoleController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\CameraController.cs" />
-     <Compile Include="Assets\_Scripts\Controllers\EnemyController.cs" />
+     <Compile Include="Assets\_Scripts\Controllers\EnemyControllerBase.cs" />
      <Compile Include="Assets\_Scripts\Controllers\EnemyDeployer.cs" />
      <Compile Include="Assets\_Scripts\Controllers\ExplosionController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\FpsController.cs" />
