@@ -4,8 +4,13 @@
 public abstract class EnemyDeployerBase : SoundMonoBehaviour {
 	public float _minXDeploy;
 	public float _maxXDeploy;
+
+	[Header("The min and max beaviour metric to deploy a enemy.")]
 	[Range(0f, 1f)]
 	public float MinMetricToDeploy;
+
+	[Range(0f, 1f)]
+	public float MaxMetricToDeploy;
 
 	void Start()
 	{
@@ -18,7 +23,7 @@ public abstract class EnemyDeployerBase : SoundMonoBehaviour {
 	{
 		var metric = CreationMetric;
 
-		if (metric >= MinMetricToDeploy)
+		if (metric >= MinMetricToDeploy && metric <= MaxMetricToDeploy)
 		{
 			var enemy = CreateEnemy();
 			var enemyX = _minXDeploy + (_maxXDeploy - _minXDeploy) * metric;

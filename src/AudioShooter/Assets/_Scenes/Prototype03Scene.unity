@@ -989,10 +989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7017e840aac4d4db1b61d230bf6a45ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaveInterval: 1
   _minXDeploy: -4
   _maxXDeploy: 4
-  MinMetricToDeploy: 0.4
+  MinMetricToDeploy: 0.5
+  MaxMetricToDeploy: 1
 --- !u!114 &990438792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2159,7 +2159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minXDeploy: -4
   _maxXDeploy: 4
-  MinMetricToDeploy: 0.4
+  MinMetricToDeploy: 0
+  MaxMetricToDeploy: 0.5
 --- !u!114 &1868599835
 MonoBehaviour:
   m_ObjectHideFlags: 0
