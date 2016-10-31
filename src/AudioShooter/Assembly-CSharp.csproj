@@ -214,7 +214,7 @@
      <Compile Include="Assets\_Scripts\Controllers\SkyEnemyController.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SoundMonoBehaviour.cs" />
      <Compile Include="Assets\_Scripts\Controllers\SpaceshipController.cs" />
-     <Compile Include="Assets\_Scripts\Deployers\EnemyDeployer.cs" />
+     <Compile Include="Assets\_Scripts\Deployers\EnemyDeployerBase.cs" />
      <Compile Include="Assets\_Scripts\Deployers\GroundEnemyDeployer.cs" />
      <Compile Include="Assets\_Scripts\Deployers\MountainDeployedEventArgs.cs" />
      <Compile Include="Assets\_Scripts\Deployers\MountainDeployer.cs" />
