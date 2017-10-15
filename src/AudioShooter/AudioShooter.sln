@@ -1,11 +1,11 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{BD809449-AF81-D691-345D-2F936D89F1FF}") = "AudioShooter", "Assembly-CSharp-firstpass.csproj", "{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioShooter", "Assembly-CSharp.csproj", "{E9FFF358-69A9-ABF0-6015-969F89DC53DA}"
 EndProject
-Project("{BD809449-AF81-D691-345D-2F936D89F1FF}") = "AudioShooter", "Assembly-CSharp.csproj", "{E9FFF358-69A9-ABF0-6015-969F89DC53DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioShooter", "Assembly-CSharp-firstpass.csproj", "{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}"
 EndProject
-Project("{BD809449-AF81-D691-345D-2F936D89F1FF}") = "AudioShooter", "Assembly-CSharp-Editor.csproj", "{E8587CCD-730D-A1D9-83F2-1560322F06F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioShooter", "Assembly-CSharp-Editor.csproj", "{E8587CCD-730D-A1D9-83F2-1560322F06F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9FFF358-69A9-ABF0-6015-969F89DC53DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9FFF358-69A9-ABF0-6015-969F89DC53DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9FFF358-69A9-ABF0-6015-969F89DC53DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9FFF358-69A9-ABF0-6015-969F89DC53DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CE0FCB1-4009-6B21-4B96-DB98FA018B93}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E8587CCD-730D-A1D9-83F2-1560322F06F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E8587CCD-730D-A1D9-83F2-1560322F06F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8587CCD-730D-A1D9-83F2-1560322F06F8}.Release|Any CPU.ActiveCfg = Release|Any CPU

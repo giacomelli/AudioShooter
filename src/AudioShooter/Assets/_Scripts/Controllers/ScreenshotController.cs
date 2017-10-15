@@ -12,7 +12,7 @@ public class ScreenshotController : MonoBehaviour {
 
 			Debug.LogFormat("Saving screenshot to {0}...", filename);
 
-			Application.CaptureScreenshot(filename, 2);
+			ScreenCapture.CaptureScreenshot(filename, 2);
 		}
 	}
 }
